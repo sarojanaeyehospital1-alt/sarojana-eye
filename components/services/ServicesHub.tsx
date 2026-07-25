@@ -1,10 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
-import { getIcon } from "@/lib/utils/icons";
 import {
   SERVICES,
   SERVICE_CATEGORIES,
@@ -12,57 +12,63 @@ import {
 import type { Service, ServiceCategory } from "@/lib/types";
 
 function ServiceListingCard({ service }: { service: Service }) {
-  const Icon = getIcon(service.icon);
   const [showBenefits, setShowBenefits] = useState(false);
 
   return (
-    <article className="group relative flex min-h-[320px] flex-col rounded-2xl border border-border bg-white p-6 shadow-card transition-all duration-300 hover:border-teal-600 hover:shadow-card-hover">
-      <span className="absolute right-4 top-4 rounded-full bg-teal-600/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-teal-700">
-        {service.category}
-      </span>
-
-      <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-teal-50 text-teal-600 transition duration-300 group-hover:scale-110">
-        <Icon className="h-8 w-8" />
+    <article className="group relative flex min-h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-card transition-all duration-300 hover:border-teal-600 hover:shadow-card-hover">
+      <div className="relative aspect-[16/10] overflow-hidden bg-teal-50">
+        <Image
+          src={service.image}
+          alt={service.title}
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover transition duration-500 group-hover:scale-105"
+        />
+        <span className="absolute right-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-teal-700 shadow-sm">
+          {service.category}
+        </span>
       </div>
 
-      <h3 className="mt-5 font-heading text-xl font-semibold text-teal-800">
-        {service.title}
-      </h3>
-      <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">
-        {service.shortDesc}
-      </p>
+      <div className="flex flex-1 flex-col p-6">
+        <h3 className="font-heading text-xl font-semibold text-teal-800">
+          {service.title}
+        </h3>
+        <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">
+          {service.shortDesc}
+        </p>
 
-      <div className="my-4 h-px bg-border" />
+        <div className="my-4 h-px bg-border" />
 
-      <div className="md:block">
-        <button
-          type="button"
-          className="mb-2 text-left text-xs font-semibold uppercase tracking-wide text-teal-700 md:pointer-events-none"
-          onClick={() => setShowBenefits((v) => !v)}
+        <div className="md:block">
+          <button
+            type="button"
+            className="mb-2 text-left text-xs font-semibold uppercase tracking-wide text-teal-700 md:pointer-events-none"
+            onClick={() => setShowBenefits((v) => !v)}
+          >
+            Key Benefits {showBenefits ? "▴" : "▾"}
+          </button>
+          <ul
+            className={`space-y-1.5 text-sm text-muted ${
+              showBenefits ? "block" : "hidden md:block"
+            }`}
+          >
+            {service.benefits.map((b) => (
+              <li key={b} className="flex items-start gap-2">
+                <Check className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
+                <span>{b}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <Link
+          href={`/services/${service.slug}`}
+          className="mt-5 inline-flex items-center gap-1 self-start rounded-xl px-3 py-2 text-sm font-semibold text-teal-600 transition hover:bg-teal-600 hover:text-white"
         >
-          Key Benefits {showBenefits ? "▴" : "▾"}
-        </button>
-        <ul
-          className={`space-y-1.5 text-sm text-muted ${
-            showBenefits ? "block" : "hidden md:block"
-          }`}
-        >
-          {service.benefits.map((b) => (
-            <li key={b} className="flex items-start gap-2">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
-              <span>{b}</span>
-            </li>
-          ))}
-        </ul>
+          Learn More
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </div>
-
-      <Link
-        href={`/services/${service.slug}`}
-        className="mt-5 inline-flex items-center gap-1 self-start rounded-xl px-3 py-2 text-sm font-semibold text-teal-600 transition hover:bg-teal-600 hover:text-white"
-      >
-        Learn More
-        <ArrowRight className="h-4 w-4" />
-      </Link>
     </article>
   );
 }

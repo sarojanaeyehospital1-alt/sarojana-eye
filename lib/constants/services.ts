@@ -8,6 +8,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Specialised evaluation of eye-related headaches and visual stress",
     icon: "Brain",
+    image: "/images/gallery/bhan6742.webp",
     category: "Medical",
     keywords: [
       "eye headache treatment hyderabad",
@@ -199,6 +200,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Complete 360° eye health assessment covering all aspects of ocular function",
     icon: "Eye",
+    image: "/images/gallery/bhan6743.webp",
     category: "Diagnostic",
     keywords: [
       "complete eye checkup hyderabad",
@@ -389,6 +391,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Advanced digital refraction and vision testing for precise prescription",
     icon: "Monitor",
+    image: "/images/gallery/bhan6744.webp",
     category: "Diagnostic",
     keywords: [
       "computerised eye test hyderabad",
@@ -572,6 +575,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Professional contact lens fitting and prescription for all lens types",
     icon: "CircleDot",
+    image: "/images/gallery/bhan6745.webp",
     category: "Optical",
     keywords: [
       "contact lens fitting hyderabad",
@@ -755,6 +759,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "State-of-the-art ultrasonic cataract removal with stitch-free sutureless IOL implantation",
     icon: "Sun",
+    image: "/images/gallery/bhan6747.webp",
     category: "Surgical",
     keywords: [
       "phacoemulsification hyderabad",
@@ -943,6 +948,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Specialised screening and treatment for diabetic retinopathy and related conditions",
     icon: "Activity",
+    image: "/images/gallery/bhan6749.webp",
     category: "Medical",
     keywords: [
       "diabetic eye care hyderabad",
@@ -1126,6 +1132,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Child-friendly vision care including squint and lazy eye treatment",
     icon: "Baby",
+    image: "/images/gallery/bhan6751.webp",
     category: "Medical",
     keywords: [
       "children eye care hyderabad",
@@ -1310,6 +1317,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Comprehensive glaucoma screening, diagnosis, and pressure management",
     icon: "Shield",
+    image: "/images/gallery/bhan6753.webp",
     category: "Diagnostic",
     keywords: [
       "glaucoma treatment hyderabad",
@@ -1493,6 +1501,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Safe surgical removal of pterygium (surfer's eye) with minimal recurrence",
     icon: "Scissors",
+    image: "/images/gallery/bhan6755.webp",
     category: "Surgical",
     keywords: [
       "pterygium surgery hyderabad",
@@ -1680,6 +1689,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Advanced retinal imaging and evaluation for macular and retinal conditions",
     icon: "ScanEye",
+    image: "/images/gallery/bhan6757.webp",
     category: "Diagnostic",
     keywords: [
       "retina specialist hyderabad",
@@ -1863,6 +1873,7 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Laser vision correction for myopia, hyperopia, and astigmatism with rapid recovery",
     icon: "Zap",
+    image: "/images/gallery/bhan6772.webp",
     category: "Laser",
     keywords: [
       "LASIK surgery hyderabad",

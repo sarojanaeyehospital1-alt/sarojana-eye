@@ -87,6 +87,8 @@ export type Service = {
   slug: string;
   shortDesc: string;
   icon: string;
+  /** Card/thumbnail image path under /public */
+  image: string;
   category: Exclude<ServiceCategory, "All">;
   keywords: string[];
   benefits: string[];
