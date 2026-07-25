@@ -1,0 +1,53 @@
+import {
+  Activity,
+  Award,
+  Baby,
+  Brain,
+  CircleDot,
+  Eye,
+  Globe2,
+  GraduationCap,
+  Heart,
+  Hospital,
+  Layers,
+  Microscope,
+  Monitor,
+  ScanEye,
+  Scissors,
+  Shield,
+  Smile,
+  Sparkles,
+  Star,
+  Sun,
+  Zap,
+  type LucideIcon,
+} from "lucide-react";
+
+const ICON_MAP: Record<string, LucideIcon> = {
+  Award,
+  Heart,
+  Eye,
+  Activity,
+  Brain,
+  Monitor,
+  CircleDot,
+  Zap,
+  Baby,
+  Shield,
+  Sun,
+  Scissors,
+  ScanEye,
+  Layers,
+  Star,
+  Smile,
+  Sparkles,
+  Laser: Zap,
+  GraduationCap,
+  Microscope,
+  Globe2,
+  Hospital,
+};
+
+export function getIcon(name: string): LucideIcon {
+  return ICON_MAP[name] ?? Eye;
+}
