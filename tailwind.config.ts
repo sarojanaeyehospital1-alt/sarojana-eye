@@ -38,8 +38,8 @@ const config: Config = {
         whatsapp: "#25D366",
       },
       fontFamily: {
-        heading: ["var(--font-playfair)", "serif"],
-        body: ["var(--font-inter)", "sans-serif"],
+        heading: ["var(--font-inter)", "system-ui", "sans-serif"],
+        body: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         brand: "0 4px 20px rgba(26, 122, 138, 0.12)",
