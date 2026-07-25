@@ -218,7 +218,21 @@ export function Footer() {
           <p>
             © {year} {HOSPITAL.name}. All rights reserved.
           </p>
-          <p>Hasthinapuram, Hyderabad · Restoring Vision, Changing Lives</p>
+          <p className="flex flex-wrap items-center justify-center gap-1.5 sm:justify-end">
+            <span>Hasthinapuram, Hyderabad · Restoring Vision, Changing Lives</span>
+            <span className="hidden sm:inline text-white/30">|</span>
+            <span>
+              Developed by{" "}
+              <a
+                href="https://techdr.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-teal-200 transition hover:text-white hover:underline"
+              >
+                techDr
+              </a>
+            </span>
+          </p>
         </div>
       </div>
     </footer>
