@@ -89,6 +89,8 @@ export type Service = {
   icon: string;
   /** Card/thumbnail image path under /public */
   image: string;
+  /** Accessible SEO-friendly alt text for service image */
+  imageAlt: string;
   category: Exclude<ServiceCategory, "All">;
   keywords: string[];
   benefits: string[];

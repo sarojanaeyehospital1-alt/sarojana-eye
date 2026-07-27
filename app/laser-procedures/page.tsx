@@ -10,12 +10,14 @@ import {
 import { PageHeroWave } from "@/components/shared/PageHeroWave";
 import { LasikEligibilityChecker } from "@/components/laser/LasikEligibilityChecker";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
-import { LASER_PROCEDURES } from "@/lib/constants/services";
+import { LASER_PROCEDURES, getServiceBySlug } from "@/lib/constants/services";
 import { HOSPITAL, SITE_URL } from "@/lib/constants/hospital";
 import { DOCTORS } from "@/lib/constants/doctors";
 import { getIcon } from "@/lib/utils/icons";
 import { createMetadata } from "@/lib/utils/metadata";
+import Image from "next/image";
 
 export const metadata: Metadata = createMetadata({
   title: "LASIK & Laser Eye Surgery in Hasthinapuram Hyderabad",
@@ -26,7 +28,13 @@ export const metadata: Metadata = createMetadata({
     "LASIK surgery Hyderabad",
     "SMILE laser surgery Hyderabad",
     "LASIK surgery in Hasthinapuram",
+    "TRANS PRK Hyderabad",
+    "SMARTSURF laser Hyderabad",
+    "IntraLase bladeless LASIK Hyderabad",
   ],
+  image: "/images/services/lasik.webp",
+  imageAlt:
+    "LASIK laser eye surgery at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
 });
 
 const FAQS = [
@@ -81,27 +89,61 @@ const WHY_US = [
 ];
 
 export default function LaserProceduresPage() {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalProcedure",
-    name: "Laser Vision Correction",
-    description:
-      "LASIK, SMILE, TRANS PRK, SMARTSURF and INTRALASE laser eye procedures at Sarojana Eye Hospital, Hasthinapuram, Hyderabad.",
-    url: `${SITE_URL}/laser-procedures`,
-    provider: { "@type": "MedicalClinic", name: HOSPITAL.name },
-  };
+  const crumbs = [
+    { name: "Home", href: "/" },
+    { name: "Laser Procedures", href: "/laser-procedures" },
+  ];
+
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      name: "LASIK & Laser Eye Surgery in Hasthinapuram Hyderabad",
+      description:
+        "LASIK, SMILE, TRANS PRK, SMARTSURF and INTRALASE laser eye procedures at Sarojana Eye Hospital, Hasthinapuram, Hyderabad.",
+      url: `${SITE_URL}/laser-procedures`,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: {
+        "@type": "MedicalProcedure",
+        name: "Laser Vision Correction",
+        bodyLocation: "Eye",
+        provider: {
+          "@type": "MedicalClinic",
+          "@id": `${SITE_URL}/#clinic`,
+          name: HOSPITAL.name,
+        },
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: "Laser Vision Correction Procedures",
+      numberOfItems: LASER_PROCEDURES.length,
+      itemListElement: LASER_PROCEDURES.map((proc, index) => {
+        const service = getServiceBySlug(proc.slug);
+        return {
+          "@type": "ListItem",
+          position: index + 1,
+          name: proc.title,
+          url: `${SITE_URL}/services/${proc.slug}`,
+          description: proc.desc,
+          ...(service
+            ? { image: `${SITE_URL}${service.image}` }
+            : {}),
+        };
+      }),
+    },
+  ];
 
   return (
     <>
+      <BreadcrumbSchema items={crumbs} />
       <SchemaOrg data={schema} />
 
       <PageHeroWave
         title="Advanced Laser Vision Correction in Hyderabad"
         subtitle="LASIK · TRANS PRK · SMARTSURF · INTRALASE · SMILE — fellowship-trained surgeons in Hasthinapuram"
-        crumbs={[
-          { name: "Home", href: "/" },
-          { name: "Laser Procedures", href: "/laser-procedures" },
-        ]}
+        crumbs={crumbs}
         badge="Laser Vision Correction"
         icon={<Sparkles className="h-16 w-16 text-white" />}
       />
@@ -142,24 +184,43 @@ export default function LaserProceduresPage() {
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {LASER_PROCEDURES.map((proc) => {
             const Icon = getIcon(proc.icon);
+            const service = getServiceBySlug(proc.slug);
             return (
               <article
                 key={proc.id}
                 className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-card transition hover:-translate-y-1 hover:border-teal-600 hover:shadow-card-hover"
               >
-                <div
-                  className="px-6 py-5 text-white"
-                  style={{
-                    background:
-                      "linear-gradient(135deg, #0F5A68 0%, #1A7A8A 55%, #22A8BF 100%)",
-                  }}
-                >
-                  <Icon className="h-8 w-8 text-teal-100" />
-                  <h3 className="mt-3 font-heading text-2xl font-bold">
-                    {proc.title}
-                  </h3>
-                  <p className="mt-1 text-xs text-white/75">{proc.fullName}</p>
-                </div>
+                {service?.image ? (
+                  <div className="relative aspect-[16/10] overflow-hidden bg-teal-50">
+                    <Image
+                      src={service.image}
+                      alt={service.imageAlt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-teal-900/85 to-transparent px-5 pb-4 pt-10 text-white">
+                      <h3 className="font-heading text-2xl font-bold">
+                        {proc.title}
+                      </h3>
+                      <p className="mt-1 text-xs text-white/75">{proc.fullName}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div
+                    className="px-6 py-5 text-white"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, #0F5A68 0%, #1A7A8A 55%, #22A8BF 100%)",
+                    }}
+                  >
+                    <Icon className="h-8 w-8 text-teal-100" />
+                    <h3 className="mt-3 font-heading text-2xl font-bold">
+                      {proc.title}
+                    </h3>
+                    <p className="mt-1 text-xs text-white/75">{proc.fullName}</p>
+                  </div>
+                )}
                 <div className="flex flex-1 flex-col p-6">
                   <p className="text-sm leading-relaxed text-muted">
                     {proc.details}
@@ -175,6 +236,12 @@ export default function LaserProceduresPage() {
                       </li>
                     ))}
                   </ul>
+                  <Link
+                    href={`/services/${proc.slug}`}
+                    className="mt-5 inline-flex text-sm font-semibold text-teal-700 transition group-hover:text-teal-800"
+                  >
+                    Learn more →
+                  </Link>
                 </div>
               </article>
             );

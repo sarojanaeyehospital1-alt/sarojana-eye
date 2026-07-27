@@ -117,3 +117,22 @@ h4,
 .snap-start {
   scroll-snap-align: start;
 }
+
+@keyframes services-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-services-marquee {
+  animation: services-marquee 55s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-services-marquee {
+    animation: none;
+  }
+}

@@ -3,32 +3,60 @@ import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { PageHeroWave } from "@/components/shared/PageHeroWave";
 import { ServicesHub } from "@/components/services/ServicesHub";
-import { HOSPITAL } from "@/lib/constants/hospital";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { SchemaOrg } from "@/components/seo/SchemaOrg";
+import { HOSPITAL, SITE_URL } from "@/lib/constants/hospital";
+import { SERVICES } from "@/lib/constants/services";
 import { createMetadata } from "@/lib/utils/metadata";
 
 export const metadata: Metadata = createMetadata({
   title:
     "Eye Care Services in Hasthinapuram Hyderabad | Sarojana Eye Hospital",
   description:
-    "Sarojana Eye Hospital offers comprehensive eye care services in Hyderabad — LASIK, cataract surgery, glaucoma, diabetic eye care, retina evaluation & more. Book your appointment today.",
+    "Sarojana Eye Hospital offers comprehensive eye care services in Hyderabad — LASIK, SMILE, TRANS PRK, SMARTSURF, INTRALASE, cataract surgery, glaucoma, diabetic eye care, retina evaluation & more. Book your appointment today.",
   path: "/services",
   keywords: [
     "eye care services Hyderabad",
     "cataract surgery Hasthinapuram",
     "glaucoma treatment Hyderabad",
+    "LASIK surgery Hyderabad",
+    "SMILE laser surgery Hyderabad",
+    "TRANS PRK Hyderabad",
   ],
 });
 
 export default function ServicesPage() {
+  const crumbs = [
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+  ];
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Eye Care Services at Sarojana Eye Hospital",
+    description:
+      "Complete list of ophthalmology services offered in Hasthinapuram, Hyderabad",
+    numberOfItems: SERVICES.length,
+    itemListElement: SERVICES.map((service, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: service.title,
+      url: `${SITE_URL}/services/${service.slug}`,
+      image: `${SITE_URL}${service.image}`,
+      description: service.shortDesc,
+    })),
+  };
+
   return (
     <>
+      <BreadcrumbSchema items={crumbs} />
+      <SchemaOrg data={itemListSchema} />
+
       <PageHeroWave
         title="Comprehensive Eye Care Services in Hyderabad"
         subtitle="From routine eye checkups to advanced laser surgeries — all under one roof at Hasthinapuram"
-        crumbs={[
-          { name: "Home", href: "/" },
-          { name: "Services", href: "/services" },
-        ]}
+        crumbs={crumbs}
       />
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">

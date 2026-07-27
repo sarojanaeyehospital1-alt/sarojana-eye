@@ -7,6 +7,7 @@ type MetaInput = {
   path?: string;
   keywords?: string[];
   image?: string;
+  imageAlt?: string;
 };
 
 const LOCAL_KEYWORDS = [
@@ -16,6 +17,8 @@ const LOCAL_KEYWORDS = [
   "LASIK surgery Hyderabad",
   "cataract surgery Hasthinapuram",
   "glaucoma treatment Hyderabad",
+  "SMILE laser surgery Hyderabad",
+  "TRANS PRK Hyderabad",
   "Sarojana Eye Hospital",
   "eye specialist Hasthinapuram",
   "ophthalmologist near Nagarjuna School Hyderabad",
@@ -27,12 +30,16 @@ export function createMetadata({
   path = "",
   keywords = [],
   image = "/images/banner.png",
+  imageAlt,
 }: MetaInput): Metadata {
   const url = `${SITE_URL}${path}`;
   const fullTitle = title.includes(HOSPITAL.name)
     ? title
     : `${title} | ${HOSPITAL.name}, Hasthinapuram, Hyderabad`;
   const imageUrl = image.startsWith("http") ? image : `${SITE_URL}${image}`;
+  const ogAlt =
+    imageAlt ??
+    `${HOSPITAL.name} – Best Eye Hospital in Hasthinapuram, Hyderabad`;
 
   return {
     title: fullTitle,
@@ -66,7 +73,7 @@ export function createMetadata({
           url: imageUrl,
           width: 1200,
           height: 630,
-          alt: `${HOSPITAL.name} – Best Eye Hospital in Hasthinapuram, Hyderabad`,
+          alt: ogAlt,
         },
       ],
     },

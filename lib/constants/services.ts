@@ -8,7 +8,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Specialised evaluation of eye-related headaches and visual stress",
     icon: "Brain",
-    image: "/images/gallery/bhan6742.webp",
+    image: "/images/services/headache-clinic.webp",
+    imageAlt: "Headache Clinic for eye-related headaches at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Medical",
     keywords: [
       "eye headache treatment hyderabad",
@@ -200,7 +201,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Complete 360° eye health assessment covering all aspects of ocular function",
     icon: "Eye",
-    image: "/images/gallery/bhan6743.webp",
+    image: "/images/services/comprehensive-eye-checkup.webp",
+    imageAlt: "Comprehensive eye checkup and full eye health assessment at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Diagnostic",
     keywords: [
       "complete eye checkup hyderabad",
@@ -391,7 +393,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Advanced digital refraction and vision testing for precise prescription",
     icon: "Monitor",
-    image: "/images/gallery/bhan6744.webp",
+    image: "/images/services/computerised-eye-testing.webp",
+    imageAlt: "Computerised eye testing and digital refraction at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Diagnostic",
     keywords: [
       "computerised eye test hyderabad",
@@ -575,7 +578,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Professional contact lens fitting and prescription for all lens types",
     icon: "CircleDot",
-    image: "/images/gallery/bhan6745.webp",
+    image: "/images/services/contact-lens.webp",
+    imageAlt: "Contact lens fitting and prescription at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Optical",
     keywords: [
       "contact lens fitting hyderabad",
@@ -759,7 +763,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "State-of-the-art ultrasonic cataract removal with stitch-free sutureless IOL implantation",
     icon: "Sun",
-    image: "/images/gallery/bhan6747.webp",
+    image: "/images/services/phacoemulsification.webp",
+    imageAlt: "Phacoemulsification and sutureless IOL cataract surgery at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Surgical",
     keywords: [
       "phacoemulsification hyderabad",
@@ -948,7 +953,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Specialised screening and treatment for diabetic retinopathy and related conditions",
     icon: "Activity",
-    image: "/images/gallery/bhan6749.webp",
+    image: "/images/services/diabetic-eye-care.webp",
+    imageAlt: "Diabetic eye care and retinopathy screening at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Medical",
     keywords: [
       "diabetic eye care hyderabad",
@@ -1132,7 +1138,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Child-friendly vision care including squint and lazy eye treatment",
     icon: "Baby",
-    image: "/images/gallery/bhan6751.webp",
+    image: "/images/services/paediatric-eye-care.webp",
+    imageAlt: "Paediatric eye care for children at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Medical",
     keywords: [
       "children eye care hyderabad",
@@ -1317,7 +1324,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Comprehensive glaucoma screening, diagnosis, and pressure management",
     icon: "Shield",
-    image: "/images/gallery/bhan6753.webp",
+    image: "/images/services/glaucoma.webp",
+    imageAlt: "Glaucoma evaluation and eye pressure management at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Diagnostic",
     keywords: [
       "glaucoma treatment hyderabad",
@@ -1501,7 +1509,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Safe surgical removal of pterygium (surfer's eye) with minimal recurrence",
     icon: "Scissors",
-    image: "/images/gallery/bhan6755.webp",
+    image: "/images/services/pterygium-surgery.webp",
+    imageAlt: "Pterygium surgery treatment at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Surgical",
     keywords: [
       "pterygium surgery hyderabad",
@@ -1689,7 +1698,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Advanced retinal imaging and evaluation for macular and retinal conditions",
     icon: "ScanEye",
-    image: "/images/gallery/bhan6757.webp",
+    image: "/images/services/retina-evaluation.webp",
+    imageAlt: "Retina evaluation and advanced retinal imaging at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Diagnostic",
     keywords: [
       "retina specialist hyderabad",
@@ -1873,7 +1883,8 @@ export const SERVICES: Service[] = [
     shortDesc:
       "Laser vision correction for myopia, hyperopia, and astigmatism with rapid recovery",
     icon: "Zap",
-    image: "/images/gallery/bhan6772.webp",
+    image: "/images/services/lasik.webp",
+    imageAlt: "LASIK laser eye surgery at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
     category: "Laser",
     keywords: [
       "LASIK surgery hyderabad",
@@ -2053,12 +2064,811 @@ export const SERVICES: Service[] = [
       relatedServices: [
         "computerised-eye-testing",
         "comprehensive-eye-checkup",
-        "contact-lens",
+        "trans-prk",
+        "smartsurf",
+        "intralase",
+        "smile",
       ],
       metaTitle:
         "LASIK Surgery in Hasthinapuram, Hyderabad | Sarojana Eye Hospital",
       metaDesc:
         "LASIK laser vision correction by fellowship-trained surgeons at Sarojana Eye Hospital, Hasthinapuram. Permanent myopia, hyperopia, and astigmatism correction in Hyderabad.",
+    },
+  },
+  {
+    id: "trans-prk",
+    title: "TRANS PRK",
+    slug: "trans-prk",
+    shortDesc:
+      "Touchless, bladeless surface laser eye surgery — no flap, no contact with the eye",
+    icon: "Sparkles",
+    image: "/images/services/trans-prk.webp",
+    imageAlt: "TRANS PRK flapless laser vision correction at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
+    category: "Laser",
+    keywords: [
+      "TRANS PRK Hyderabad",
+      "transepithelial PRK Hasthinapuram",
+      "flapless laser eye surgery Hyderabad",
+    ],
+    benefits: [
+      "No flap-related risks",
+      "Suitable for thinner corneas in many cases",
+      "Good for contact and sports lifestyles",
+    ],
+    definition:
+      "TRANS PRK (Transepithelial Photorefractive Keratectomy) is a no-touch surface laser procedure that removes the epithelium and reshapes the cornea in a single laser step. At Sarojana Eye Hospital in Hasthinapuram, Hyderabad, it is offered as a flapless alternative for patients who may not be ideal LASIK candidates.",
+    importance:
+      "Because there is no corneal flap, TRANS PRK can be a safer choice for thinner corneas, contact sports, or patients who prefer a completely surface-based approach.",
+    approach: [
+      "Pre-op corneal evaluation",
+      "Single-step laser epithelium removal",
+      "Corneal reshaping",
+      "Protective bandage contact lens",
+      "Surface healing follow-up",
+    ],
+    whoNeeds: [
+      "Patients seeking flapless laser vision correction",
+      "People with thinner corneas not ideal for LASIK flaps",
+      "Active lifestyles or contact sports participants",
+      "Adults with stable refractive error after detailed evaluation",
+    ],
+    recovery:
+      "Surface healing takes longer than LASIK. Expect several days of discomfort and temporary blur while the epithelium regenerates. Vision typically improves over 1–2 weeks with continued refinement.",
+    whyChoose: [
+      "True no-touch, no-flap laser approach",
+      "Honest counselling among LASIK, SMILE, and surface options",
+      "Fellowship-trained refractive surgeons in Hasthinapuram",
+    ],
+    faqs: [
+      {
+        question: "How is TRANS PRK different from LASIK?",
+        answer:
+          "LASIK creates a corneal flap before reshaping. TRANS PRK is flapless — the laser treats the surface in one step, which can suit thinner corneas or patients who want to avoid flap-related risks.",
+      },
+      {
+        question: "Is TRANS PRK painful?",
+        answer:
+          "Anaesthetic drops are used during the procedure. After surgery, surface healing can cause more discomfort for a few days than LASIK; drops and a bandage lens help manage this.",
+      },
+      {
+        question: "How long is recovery after TRANS PRK?",
+        answer:
+          "Most patients notice meaningful improvement within 1–2 weeks, with vision continuing to settle over the following weeks as the surface heals fully.",
+      },
+      {
+        question: "Who is a good candidate for TRANS PRK?",
+        answer:
+          "Adults with stable prescription, healthy eyes, and corneal measurements that favour a surface procedure — especially when a LASIK flap is not ideal.",
+      },
+      {
+        question: "Can TRANS PRK correct astigmatism?",
+        answer:
+          "Yes. Suitability for myopia, hyperopia, and astigmatism depends on your prescription range and corneal assessment.",
+      },
+      {
+        question: "Is TRANS PRK available in Hasthinapuram?",
+        answer:
+          "Yes. Sarojana Eye Hospital offers TRANS PRK counselling and pathways at our Hasthinapuram clinic near Nagarjuna Sagar Road, Hyderabad.",
+      },
+    ],
+    content: {
+      whatIs:
+        "TRANS PRK (Transepithelial Photorefractive Keratectomy) is a no-touch surface laser procedure that removes the epithelium and reshapes the cornea in a single laser step. At Sarojana Eye Hospital in Hasthinapuram, Hyderabad, it is offered as a flapless alternative for patients who may not be ideal LASIK candidates. Unlike LASIK, there is no blade or flap — the laser works entirely on the corneal surface. This can be preferable for thinner corneas, certain occupations, and contact sports. After treatment, a soft bandage contact lens protects the eye while the epithelium regenerates. Your surgeon will compare TRANS PRK with LASIK, SMARTSURF, INTRALASE, and SMILE after a full refractive work-up near Nagarjuna Sagar Road.",
+      whyImportant: [
+        {
+          title: "No corneal flap",
+          desc: "Eliminates flap-related complications and can suit patients who prefer a surface-only approach.",
+        },
+        {
+          title: "Option for thinner corneas",
+          desc: "Many patients who are borderline for LASIK flaps may still be candidates for carefully planned TRANS PRK.",
+        },
+        {
+          title: "Active and contact lifestyles",
+          desc: "Without a flap, there is no risk of flap displacement from trauma during sports or physical work.",
+        },
+        {
+          title: "Guided choice among laser options",
+          desc: "At Sarojana Eye Hospital, TRANS PRK is recommended only when measurements and lifestyle make it the better fit.",
+        },
+      ],
+      steps: [
+        {
+          number: "01",
+          title: "Pre-op corneal evaluation",
+          desc: "Refraction, topography, thickness, and ocular surface health confirm whether TRANS PRK is suitable.",
+        },
+        {
+          number: "02",
+          title: "Single-step laser treatment",
+          desc: "The laser removes epithelium and reshapes the cornea in one continuous, no-touch sequence.",
+        },
+        {
+          number: "03",
+          title: "Bandage lens placement",
+          desc: "A soft protective contact lens is placed to support comfort while the surface regenerates.",
+        },
+        {
+          number: "04",
+          title: "Medication and aftercare",
+          desc: "Antibiotic and anti-inflammatory drops are prescribed with clear home-care instructions.",
+        },
+        {
+          number: "05",
+          title: "Healing follow-ups",
+          desc: "Reviews track epithelial healing, vision recovery, and long-term refractive stability.",
+        },
+      ],
+      candidates: {
+        suitable: [
+          "Patients seeking flapless laser vision correction",
+          "People with thinner corneas not ideal for LASIK flaps",
+          "Active lifestyles or contact sports participants",
+          "Adults with stable refractive error after detailed evaluation",
+        ],
+        avoid: [
+          "Unstable or rapidly changing prescription",
+          "Active corneal disease, uncontrolled dry eye, or infection",
+          "Pregnancy, breastfeeding, or conditions needing specialist clearance",
+        ],
+      },
+      recovery: [
+        {
+          milestone: "Days 1–3",
+          note: "Expect surface discomfort, light sensitivity, and blur. Use drops and rest as advised; keep the bandage lens in place.",
+        },
+        {
+          milestone: "Week 1",
+          note: "Epithelium typically regenerates. Discomfort eases and functional vision begins to return for many patients.",
+        },
+        {
+          milestone: "Weeks 2–4",
+          note: "Clarity continues to improve. Avoid dusty environments, swimming, and eye rubbing until cleared.",
+        },
+        {
+          milestone: "Full Recovery",
+          note: "Vision usually stabilises over several weeks to months. Attend all follow-ups for best outcomes.",
+        },
+      ],
+      faqs: [
+        {
+          question: "How is TRANS PRK different from LASIK?",
+          answer:
+            "LASIK creates a corneal flap before reshaping. TRANS PRK is flapless — the laser treats the surface in one step, which can suit thinner corneas or patients who want to avoid flap-related risks.",
+        },
+        {
+          question: "Is TRANS PRK painful?",
+          answer:
+            "Anaesthetic drops are used during the procedure. After surgery, surface healing can cause more discomfort for a few days than LASIK; drops and a bandage lens help manage this.",
+        },
+        {
+          question: "How long is recovery after TRANS PRK?",
+          answer:
+            "Most patients notice meaningful improvement within 1–2 weeks, with vision continuing to settle over the following weeks as the surface heals fully.",
+        },
+        {
+          question: "Who is a good candidate for TRANS PRK?",
+          answer:
+            "Adults with stable prescription, healthy eyes, and corneal measurements that favour a surface procedure — especially when a LASIK flap is not ideal.",
+        },
+        {
+          question: "Can TRANS PRK correct astigmatism?",
+          answer:
+            "Yes. Suitability for myopia, hyperopia, and astigmatism depends on your prescription range and corneal assessment.",
+        },
+        {
+          question: "Is TRANS PRK available in Hasthinapuram?",
+          answer:
+            "Yes. Sarojana Eye Hospital offers TRANS PRK counselling and pathways at our Hasthinapuram clinic near Nagarjuna Sagar Road, Hyderabad.",
+        },
+      ],
+      relatedServices: [
+        "lasik",
+        "smartsurf",
+        "smile",
+        "comprehensive-eye-checkup",
+      ],
+      metaTitle:
+        "TRANS PRK in Hasthinapuram, Hyderabad | Sarojana Eye Hospital",
+      metaDesc:
+        "Flapless TRANS PRK laser eye surgery at Sarojana Eye Hospital, Hasthinapuram. Touchless surface vision correction for thinner corneas in Hyderabad.",
+    },
+  },
+  {
+    id: "smartsurf",
+    title: "SMARTSURF",
+    slug: "smartsurf",
+    shortDesc:
+      "Advanced surface ablation for smooth visual outcomes with attention to dry-eye comfort",
+    icon: "Star",
+    image: "/images/services/smartsurf.webp",
+    imageAlt: "SMARTSURF surface laser eye surgery at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
+    category: "Laser",
+    keywords: [
+      "SMARTSURF Hyderabad",
+      "smart surface ablation Hasthinapuram",
+      "surface laser eye surgery Hyderabad",
+    ],
+    benefits: [
+      "Flapless surface treatment",
+      "Focus on visual quality",
+      "Option when LASIK flap is not ideal",
+    ],
+    definition:
+      "SMARTSURF is an advanced smart surface ablation approach designed for smooth ablation profiles, comfort, and quality vision. At Sarojana Eye Hospital in Hasthinapuram, Hyderabad, it is considered when a refined surface procedure better matches your corneal measurements and lifestyle than a flap-based LASIK plan.",
+    importance:
+      "Surface ablation can reduce flap-related risks and may be preferred when dry-eye concerns or corneal thickness make traditional LASIK less suitable.",
+    approach: [
+      "Detailed refractive assessment",
+      "Surface ablation planning",
+      "Laser treatment",
+      "Protective aftercare",
+      "Vision refinement follow-up",
+    ],
+    whoNeeds: [
+      "Patients advised against LASIK flaps",
+      "People seeking advanced surface laser correction",
+      "Adults with stable power and healthy ocular surface after optimisation",
+      "Those comparing SMARTSURF with TRANS PRK and SMILE",
+    ],
+    recovery:
+      "Like other surface procedures, recovery is gradual over days to weeks as the epithelium heals. Temporary discomfort and fluctuating vision are common early on.",
+    whyChoose: [
+      "Advanced surface ablation counselling",
+      "Emphasis on comfort and visual quality",
+      "Full laser menu including LASIK, TRANS PRK, INTRALASE, and SMILE",
+    ],
+    faqs: [
+      {
+        question: "What is SMARTSURF?",
+        answer:
+          "SMARTSURF is an advanced surface laser ablation approach that reshapes the cornea without creating a LASIK flap, aiming for smooth treatment profiles and quality vision.",
+      },
+      {
+        question: "How does SMARTSURF differ from TRANS PRK?",
+        answer:
+          "Both are flapless surface procedures. Your surgeon will explain which surface platform and profile best fit your corneal shape, prescription, and healing expectations.",
+      },
+      {
+        question: "Is SMARTSURF better for dry eyes?",
+        answer:
+          "Surface options can be considered when flap-based LASIK may worsen dryness. Significant dry eye is often treated medically first, then reassessed.",
+      },
+      {
+        question: "How long does SMARTSURF recovery take?",
+        answer:
+          "Expect several days of healing discomfort and gradual visual improvement over 1–2 weeks, with further refinement afterward.",
+      },
+      {
+        question: "Am I a candidate for SMARTSURF?",
+        answer:
+          "Candidacy depends on age, stable refraction, corneal thickness/topography, and ocular surface health after a full pre-operative evaluation.",
+      },
+      {
+        question: "Where can I get SMARTSURF in Hyderabad?",
+        answer:
+          "Sarojana Eye Hospital offers SMARTSURF counselling and laser pathways at our Hasthinapuram centre near Nagarjuna Sagar Road.",
+      },
+    ],
+    content: {
+      whatIs:
+        "SMARTSURF is an advanced smart surface ablation approach designed for smooth ablation profiles, comfort, and quality vision. At Sarojana Eye Hospital in Hasthinapuram, Hyderabad, it is considered when a refined surface procedure better matches your corneal measurements and lifestyle than a flap-based LASIK plan. The treatment reshapes the cornea from the surface without creating a flap, which can appeal to patients concerned about dry eye or flap trauma. After surgery, protective measures and medicated drops support healing while vision clears. We discuss SMARTSURF alongside TRANS PRK, LASIK, INTRALASE, and SMILE so you understand every suitable option before deciding.",
+      whyImportant: [
+        {
+          title: "Flapless precision",
+          desc: "Avoids corneal flap creation while still delivering laser refractive correction for suitable prescriptions.",
+        },
+        {
+          title: "Visual quality focus",
+          desc: "Advanced surface planning aims for smooth ablation and comfortable visual outcomes.",
+        },
+        {
+          title: "Dry-eye considerations",
+          desc: "May be preferred when flap-based LASIK could aggravate ocular surface symptoms.",
+        },
+        {
+          title: "Personalised laser pathway",
+          desc: "Chosen only after comparing all laser options available at Sarojana Eye Hospital, Hasthinapuram.",
+        },
+      ],
+      steps: [
+        {
+          number: "01",
+          title: "Detailed refractive assessment",
+          desc: "Corneal mapping, refraction, and surface evaluation establish whether SMARTSURF is appropriate.",
+        },
+        {
+          number: "02",
+          title: "Surface ablation planning",
+          desc: "Your surgeon designs a treatment plan matched to your prescription and corneal profile.",
+        },
+        {
+          number: "03",
+          title: "Laser treatment",
+          desc: "The cornea is reshaped with an advanced surface ablation protocol under anaesthetic drops.",
+        },
+        {
+          number: "04",
+          title: "Protective aftercare",
+          desc: "A bandage lens and prescribed drops support healing and comfort in the early days.",
+        },
+        {
+          number: "05",
+          title: "Vision refinement follow-up",
+          desc: "Scheduled reviews monitor clarity, healing, and long-term refractive stability.",
+        },
+      ],
+      candidates: {
+        suitable: [
+          "Patients advised against LASIK flaps",
+          "People seeking advanced surface laser correction",
+          "Adults with stable power and healthy ocular surface after optimisation",
+          "Those comparing SMARTSURF with TRANS PRK and SMILE",
+        ],
+        avoid: [
+          "Unstable prescription or progressive corneal disease",
+          "Severe untreated dry eye or active eye infection",
+          "Pregnancy, breastfeeding, or uncleared systemic risk factors",
+        ],
+      },
+      recovery: [
+        {
+          milestone: "Days 1–3",
+          note: "Surface discomfort and fluctuating vision are common. Rest and use drops exactly as prescribed.",
+        },
+        {
+          milestone: "Week 1",
+          note: "Healing progresses and many patients regain usable vision for daily tasks.",
+        },
+        {
+          milestone: "Weeks 2–4",
+          note: "Clarity improves further. Avoid swimming, dusty air, and eye rubbing until your surgeon clears you.",
+        },
+        {
+          milestone: "Full Recovery",
+          note: "Final visual stability typically develops over weeks to months with regular follow-up.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What is SMARTSURF?",
+          answer:
+            "SMARTSURF is an advanced surface laser ablation approach that reshapes the cornea without creating a LASIK flap, aiming for smooth treatment profiles and quality vision.",
+        },
+        {
+          question: "How does SMARTSURF differ from TRANS PRK?",
+          answer:
+            "Both are flapless surface procedures. Your surgeon will explain which surface platform and profile best fit your corneal shape, prescription, and healing expectations.",
+        },
+        {
+          question: "Is SMARTSURF better for dry eyes?",
+          answer:
+            "Surface options can be considered when flap-based LASIK may worsen dryness. Significant dry eye is often treated medically first, then reassessed.",
+        },
+        {
+          question: "How long does SMARTSURF recovery take?",
+          answer:
+            "Expect several days of healing discomfort and gradual visual improvement over 1–2 weeks, with further refinement afterward.",
+        },
+        {
+          question: "Am I a candidate for SMARTSURF?",
+          answer:
+            "Candidacy depends on age, stable refraction, corneal thickness/topography, and ocular surface health after a full pre-operative evaluation.",
+        },
+        {
+          question: "Where can I get SMARTSURF in Hyderabad?",
+          answer:
+            "Sarojana Eye Hospital offers SMARTSURF counselling and laser pathways at our Hasthinapuram centre near Nagarjuna Sagar Road.",
+        },
+      ],
+      relatedServices: [
+        "lasik",
+        "trans-prk",
+        "smile",
+        "comprehensive-eye-checkup",
+      ],
+      metaTitle:
+        "SMARTSURF Laser Surgery in Hasthinapuram | Sarojana Eye Hospital",
+      metaDesc:
+        "SMARTSURF advanced surface laser vision correction at Sarojana Eye Hospital, Hasthinapuram, Hyderabad. Flapless option with focus on comfort and visual quality.",
+    },
+  },
+  {
+    id: "intralase",
+    title: "INTRALASE",
+    slug: "intralase",
+    shortDesc:
+      "100% blade-free femtosecond LASIK with precise, customisable flap creation",
+    icon: "Layers",
+    image: "/images/services/intralase.webp",
+    imageAlt: "INTRALASE bladeless femtosecond LASIK at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
+    category: "Laser",
+    keywords: [
+      "IntraLase Hyderabad",
+      "bladeless LASIK Hasthinapuram",
+      "femtosecond LASIK Hyderabad",
+    ],
+    benefits: [
+      "Blade-free flap creation",
+      "High precision",
+      "Customisable flap parameters",
+    ],
+    definition:
+      "INTRALASE (IntraLase femtosecond LASIK) creates the corneal flap with a femtosecond laser instead of a mechanical blade, then uses an excimer laser to reshape the cornea. At Sarojana Eye Hospital in Hasthinapuram, Hyderabad, this blade-free approach supports predictable flap architecture for suitable LASIK candidates.",
+    importance:
+      "Femtosecond flap creation enhances precision and customisation compared with older blade-based microkeratome LASIK, improving safety margins for many patients.",
+    approach: [
+      "Eligibility work-up",
+      "Femtosecond flap creation",
+      "Excimer laser reshaping",
+      "Flap repositioning",
+      "Rapid recovery follow-up",
+    ],
+    whoNeeds: [
+      "LASIK candidates seeking blade-free flap technology",
+      "Adults with adequate corneal thickness and stable power",
+      "Patients wanting precise, customisable flap parameters",
+      "People comparing INTRALASE with SMILE and surface options",
+    ],
+    recovery:
+      "Most patients notice clearer vision within 24 hours, similar to modern LASIK. Avoid rubbing the eyes and follow drop schedules closely in the first week.",
+    whyChoose: [
+      "Blade-free femtosecond flap creation",
+      "Fellowship-trained refractive surgeons",
+      "Full comparison with SMILE, TRANS PRK, and SMARTSURF",
+    ],
+    faqs: [
+      {
+        question: "What is INTRALASE?",
+        answer:
+          "INTRALASE uses a femtosecond laser to create a precise corneal flap without a mechanical blade, followed by excimer laser reshaping of the cornea.",
+      },
+      {
+        question: "Is bladeless LASIK safer than blade LASIK?",
+        answer:
+          "Femtosecond flaps offer highly predictable thickness and architecture. Your surgeon will still confirm overall LASIK safety based on your corneal measurements.",
+      },
+      {
+        question: "How long does INTRALASE take?",
+        answer:
+          "Laser steps are brief. Including preparation, the visit is typically completed in a short outpatient session.",
+      },
+      {
+        question: "When can I return to work after INTRALASE?",
+        answer:
+          "Many patients resume desk work within 1–2 days, depending on comfort and your surgeon’s advice.",
+      },
+      {
+        question: "Does INTRALASE hurt?",
+        answer:
+          "Anaesthetic drops numb the eye. You may feel brief pressure during flap creation, but the procedure is generally well tolerated.",
+      },
+      {
+        question: "Is INTRALASE available in Hasthinapuram?",
+        answer:
+          "Yes. Sarojana Eye Hospital provides INTRALASE / bladeless LASIK pathways at our Hasthinapuram clinic in Hyderabad.",
+      },
+    ],
+    content: {
+      whatIs:
+        "INTRALASE (IntraLase femtosecond LASIK) creates the corneal flap with a femtosecond laser instead of a mechanical blade, then uses an excimer laser to reshape the cornea. At Sarojana Eye Hospital in Hasthinapuram, Hyderabad, this blade-free approach supports predictable flap architecture for suitable LASIK candidates. The femtosecond laser can customise flap diameter, depth, and hinge parameters for your eye. After the flap is lifted, the excimer laser corrects myopia, hyperopia, or astigmatism, and the flap is repositioned without stitches. Recovery is typically rapid. If you are not ideal for a flap procedure, we discuss SMILE, TRANS PRK, and SMARTSURF as alternatives near Nagarjuna Sagar Road.",
+      whyImportant: [
+        {
+          title: "No mechanical blade",
+          desc: "Femtosecond technology creates the flap with laser precision rather than a microkeratome blade.",
+        },
+        {
+          title: "Customisable flap design",
+          desc: "Flap parameters can be tailored to your corneal anatomy for a more predictable procedure.",
+        },
+        {
+          title: "Rapid visual recovery",
+          desc: "Most suitable candidates enjoy quick improvement similar to modern LASIK timelines.",
+        },
+        {
+          title: "Safety-first candidacy",
+          desc: "Detailed screening at Sarojana Eye Hospital ensures INTRALASE is recommended only when appropriate.",
+        },
+      ],
+      steps: [
+        {
+          number: "01",
+          title: "Eligibility work-up",
+          desc: "Corneal thickness, topography, refraction, and dry-eye assessment confirm bladeless LASIK suitability.",
+        },
+        {
+          number: "02",
+          title: "Femtosecond flap creation",
+          desc: "A precise corneal flap is created with the IntraLase femtosecond laser — no mechanical blade.",
+        },
+        {
+          number: "03",
+          title: "Excimer laser reshaping",
+          desc: "The underlying cornea is reshaped to correct your refractive error with high accuracy.",
+        },
+        {
+          number: "04",
+          title: "Flap repositioning",
+          desc: "The flap is carefully replaced and adheres naturally without stitches.",
+        },
+        {
+          number: "05",
+          title: "Rapid recovery follow-up",
+          desc: "Protective guidelines and medicated drops support healing over the first days and weeks.",
+        },
+      ],
+      candidates: {
+        suitable: [
+          "LASIK candidates seeking blade-free flap technology",
+          "Adults with adequate corneal thickness and stable power",
+          "Patients wanting precise, customisable flap parameters",
+          "People comparing INTRALASE with SMILE and surface options",
+        ],
+        avoid: [
+          "Insufficient corneal thickness or keratoconus",
+          "Unstable prescription or uncontrolled dry eye",
+          "Pregnancy, breastfeeding, or uncleared medical contraindications",
+        ],
+      },
+      recovery: [
+        {
+          milestone: "Day 1",
+          note: "Vision is often much clearer within hours. Rest, use drops, and avoid rubbing your eyes.",
+        },
+        {
+          milestone: "Week 1",
+          note: "Most patients achieve functional distance vision. Avoid swimming, dusty air, and eye makeup as advised.",
+        },
+        {
+          milestone: "Month 1",
+          note: "Vision continues to refine. Follow-up confirms healing and stable refraction.",
+        },
+        {
+          milestone: "Full Recovery",
+          note: "Stabilisation typically occurs over a few months. Lifelong eye health checks remain important.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What is INTRALASE?",
+          answer:
+            "INTRALASE uses a femtosecond laser to create a precise corneal flap without a mechanical blade, followed by excimer laser reshaping of the cornea.",
+        },
+        {
+          question: "Is bladeless LASIK safer than blade LASIK?",
+          answer:
+            "Femtosecond flaps offer highly predictable thickness and architecture. Your surgeon will still confirm overall LASIK safety based on your corneal measurements.",
+        },
+        {
+          question: "How long does INTRALASE take?",
+          answer:
+            "Laser steps are brief. Including preparation, the visit is typically completed in a short outpatient session.",
+        },
+        {
+          question: "When can I return to work after INTRALASE?",
+          answer:
+            "Many patients resume desk work within 1–2 days, depending on comfort and your surgeon’s advice.",
+        },
+        {
+          question: "Does INTRALASE hurt?",
+          answer:
+            "Anaesthetic drops numb the eye. You may feel brief pressure during flap creation, but the procedure is generally well tolerated.",
+        },
+        {
+          question: "Is INTRALASE available in Hasthinapuram?",
+          answer:
+            "Yes. Sarojana Eye Hospital provides INTRALASE / bladeless LASIK pathways at our Hasthinapuram clinic in Hyderabad.",
+        },
+      ],
+      relatedServices: [
+        "lasik",
+        "smile",
+        "trans-prk",
+        "computerised-eye-testing",
+      ],
+      metaTitle:
+        "INTRALASE Bladeless LASIK in Hasthinapuram | Sarojana Eye Hospital",
+      metaDesc:
+        "INTRALASE femtosecond bladeless LASIK at Sarojana Eye Hospital, Hasthinapuram. Precise flap creation and laser vision correction in Hyderabad.",
+    },
+  },
+  {
+    id: "smile",
+    title: "SMILE",
+    slug: "smile",
+    shortDesc:
+      "Minimally invasive flapless laser vision correction through a tiny keyhole incision",
+    icon: "Smile",
+    image: "/images/services/smile.webp",
+    imageAlt: "SMILE flapless laser vision correction at Sarojana Eye Hospital, Hasthinapuram, Hyderabad",
+    category: "Laser",
+    keywords: [
+      "SMILE laser surgery Hyderabad",
+      "SMILE eye surgery Hasthinapuram",
+      "flapless laser vision correction Hyderabad",
+    ],
+    benefits: [
+      "Flapless keyhole approach",
+      "Potentially less dry eye impact",
+      "Fast return to many activities",
+    ],
+    definition:
+      "SMILE (Small Incision Lenticule Extraction) is a minimally invasive laser vision correction that creates and removes a small lenticule through a tiny incision — without a large corneal flap. At Sarojana Eye Hospital in Hasthinapuram, Hyderabad, SMILE is offered for eligible myopic patients seeking a flapless alternative to LASIK.",
+    importance:
+      "The keyhole approach preserves more anterior corneal nerves in many cases and avoids flap-related trauma, which can benefit dry-eye-prone or active patients.",
+    approach: [
+      "Eligibility mapping",
+      "Femtosecond lenticule creation",
+      "Small incision extraction",
+      "Immediate aftercare",
+      "Vision recovery reviews",
+    ],
+    whoNeeds: [
+      "Eligible adults with myopia (and selected astigmatism profiles)",
+      "Patients preferring flapless keyhole laser surgery",
+      "People concerned about dry eye after traditional LASIK",
+      "Those seeking SMILE laser surgery in Hasthinapuram, Hyderabad",
+    ],
+    recovery:
+      "Many patients resume light activities quickly. Vision improves over the first days, with continued sharpening over subsequent weeks. Follow all drop and hygiene instructions.",
+    whyChoose: [
+      "Latest-generation minimally invasive laser option",
+      "Flapless alternative to conventional LASIK",
+      "Surgeon-guided comparison with TRANS PRK and INTRALASE",
+    ],
+    faqs: [
+      {
+        question: "What is SMILE eye surgery?",
+        answer:
+          "SMILE removes a small lenticule of corneal tissue through a tiny incision without creating a large LASIK flap, correcting refractive error in eligible patients.",
+      },
+      {
+        question: "SMILE vs LASIK — which is better?",
+        answer:
+          "Neither is universally better. SMILE is flapless; LASIK often offers very rapid visual recovery. Suitability depends on your prescription and corneal measurements.",
+      },
+      {
+        question: "Does SMILE correct hyperopia?",
+        answer:
+          "SMILE is primarily used for myopia and certain astigmatism ranges. Hyperopia may be better served by other laser options after evaluation.",
+      },
+      {
+        question: "Is SMILE recovery faster than PRK?",
+        answer:
+          "Yes for most patients — SMILE typically involves less surface healing discomfort than surface ablation procedures like TRANS PRK.",
+      },
+      {
+        question: "Is SMILE permanent?",
+        answer:
+          "The refractive correction is long-lasting. Age-related reading vision changes (presbyopia) may still require glasses later in life.",
+      },
+      {
+        question: "Where is SMILE available near Nagarjuna Sagar Road?",
+        answer:
+          "Sarojana Eye Hospital in Hasthinapuram provides SMILE counselling and laser vision correction pathways for eligible Hyderabad patients.",
+      },
+    ],
+    content: {
+      whatIs:
+        "SMILE (Small Incision Lenticule Extraction) is a minimally invasive laser vision correction that creates and removes a small lenticule through a tiny incision — without a large corneal flap. At Sarojana Eye Hospital in Hasthinapuram, Hyderabad, SMILE is offered for eligible myopic patients seeking a flapless alternative to LASIK. A femtosecond laser shapes the lenticule inside the cornea; the surgeon then extracts it through a small keyhole incision. This preserves more of the corneal surface structure compared with flap-based LASIK. Many patients appreciate the comfort profile and relatively quick return to activity. Your pre-operative work-up determines whether SMILE, LASIK/INTRALASE, TRANS PRK, or SMARTSURF is the safest match for your eyes.",
+      whyImportant: [
+        {
+          title: "Flapless keyhole surgery",
+          desc: "No large corneal flap means no flap displacement risk from trauma or rubbing.",
+        },
+        {
+          title: "Dry-eye friendly profile for many",
+          desc: "Smaller incision can mean less disruption to corneal nerves compared with traditional LASIK flaps.",
+        },
+        {
+          title: "Modern minimally invasive option",
+          desc: "SMILE represents a later generation of laser vision correction for suitable myopic patients.",
+        },
+        {
+          title: "Matched to your measurements",
+          desc: "Recommended only when prescription range and corneal maps support safe SMILE outcomes.",
+        },
+      ],
+      steps: [
+        {
+          number: "01",
+          title: "Eligibility mapping",
+          desc: "Detailed refraction, corneal thickness, and tomography confirm whether SMILE fits your eyes.",
+        },
+        {
+          number: "02",
+          title: "Femtosecond lenticule creation",
+          desc: "A femtosecond laser creates a precise lenticule within the corneal stroma.",
+        },
+        {
+          number: "03",
+          title: "Small incision extraction",
+          desc: "The lenticule is removed through a tiny keyhole incision, reshaping the cornea.",
+        },
+        {
+          number: "04",
+          title: "Immediate aftercare",
+          desc: "Protective instructions and medicated drops begin right after the short outpatient procedure.",
+        },
+        {
+          number: "05",
+          title: "Vision recovery reviews",
+          desc: "Follow-ups track clarity, comfort, and refractive stability in the weeks after surgery.",
+        },
+      ],
+      candidates: {
+        suitable: [
+          "Eligible adults with myopia (and selected astigmatism profiles)",
+          "Patients preferring flapless keyhole laser surgery",
+          "People concerned about dry eye after traditional LASIK",
+          "Those seeking SMILE laser surgery in Hasthinapuram, Hyderabad",
+        ],
+        avoid: [
+          "Prescription outside SMILE treatment range",
+          "Thin corneas, keratoconus, or unstable refraction",
+          "Pregnancy, breastfeeding, or uncleared ocular surface disease",
+        ],
+      },
+      recovery: [
+        {
+          milestone: "Day 1",
+          note: "Mild irritation or haze can occur. Many notice useful vision quickly; avoid rubbing and follow drop schedules.",
+        },
+        {
+          milestone: "Week 1",
+          note: "Comfort improves and daily activities often resume. Avoid swimming and dusty environments until cleared.",
+        },
+        {
+          milestone: "Month 1",
+          note: "Vision continues to sharpen. Attend review visits to confirm healing.",
+        },
+        {
+          milestone: "Full Recovery",
+          note: "Stable outcomes typically develop over weeks to months. Long-term eye care remains important.",
+        },
+      ],
+      faqs: [
+        {
+          question: "What is SMILE eye surgery?",
+          answer:
+            "SMILE removes a small lenticule of corneal tissue through a tiny incision without creating a large LASIK flap, correcting refractive error in eligible patients.",
+        },
+        {
+          question: "SMILE vs LASIK — which is better?",
+          answer:
+            "Neither is universally better. SMILE is flapless; LASIK often offers very rapid visual recovery. Suitability depends on your prescription and corneal measurements.",
+        },
+        {
+          question: "Does SMILE correct hyperopia?",
+          answer:
+            "SMILE is primarily used for myopia and certain astigmatism ranges. Hyperopia may be better served by other laser options after evaluation.",
+        },
+        {
+          question: "Is SMILE recovery faster than PRK?",
+          answer:
+            "Yes for most patients — SMILE typically involves less surface healing discomfort than surface ablation procedures like TRANS PRK.",
+        },
+        {
+          question: "Is SMILE permanent?",
+          answer:
+            "The refractive correction is long-lasting. Age-related reading vision changes (presbyopia) may still require glasses later in life.",
+        },
+        {
+          question: "Where is SMILE available near Nagarjuna Sagar Road?",
+          answer:
+            "Sarojana Eye Hospital in Hasthinapuram provides SMILE counselling and laser vision correction pathways for eligible Hyderabad patients.",
+        },
+      ],
+      relatedServices: [
+        "lasik",
+        "intralase",
+        "trans-prk",
+        "smartsurf",
+      ],
+      metaTitle:
+        "SMILE Laser Eye Surgery in Hasthinapuram | Sarojana Eye Hospital",
+      metaDesc:
+        "SMILE flapless laser vision correction at Sarojana Eye Hospital, Hasthinapuram. Minimally invasive keyhole myopia treatment in Hyderabad.",
     },
   },
 ];

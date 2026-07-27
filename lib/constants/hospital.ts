@@ -52,6 +52,7 @@ export const HOSPITAL = {
     facebook: "https://www.facebook.com/sarojanaeyehospital",
     instagram: "https://www.instagram.com/sarojanaeyehospital",
     youtube: "https://www.youtube.com/@sarojanaeyehospital",
+    gmb: "https://www.google.com/maps/search/?api=1&query=Sarojana+Eye+Hospital+Hasthinapuram+Hyderabad",
   },
   payments: ["Cash", "UPI", "Debit/Credit Card"],
 } as const;

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Images } from "lucide-react";
+import { GalleryGrid } from "@/components/gallery/GalleryGrid";
 import { PageHeroWave } from "@/components/shared/PageHeroWave";
 import { GALLERY_ITEMS } from "@/lib/constants/gallery";
 import { createMetadata } from "@/lib/utils/metadata";
@@ -32,27 +32,7 @@ export default function GalleryPage() {
       />
 
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {GALLERY_ITEMS.map((item, index) => (
-            <figure
-              key={item.id}
-              className="group overflow-hidden rounded-2xl border border-border bg-white shadow-card"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-teal-50">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  quality={75}
-                  priority={index < 3}
-                  loading={index < 3 ? "eager" : "lazy"}
-                  className="object-cover transition duration-500 group-hover:scale-[1.03]"
-                />
-              </div>
-            </figure>
-          ))}
-        </div>
+        <GalleryGrid items={GALLERY_ITEMS} />
       </section>
     </>
   );

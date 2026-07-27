@@ -1,5 +1,6 @@
 import { HOSPITAL, SITE_URL } from "@/lib/constants/hospital";
 import { SchemaOrg } from "@/components/seo/SchemaOrg";
+import { SERVICES } from "@/lib/constants/services";
 
 export function LocalBusinessSchema() {
   const data = [
@@ -10,13 +11,14 @@ export function LocalBusinessSchema() {
       name: HOSPITAL.name,
       alternateName: "Sarojana Eye Hospitals",
       description:
-        "Best eye hospital in Hasthinapuram, Hyderabad offering LASIK, cataract surgery, glaucoma treatment, retina care and comprehensive ophthalmology services near Nagarjuna Sagar Road.",
+        "Best eye hospital in Hasthinapuram, Hyderabad offering LASIK, SMILE, TRANS PRK, SMARTSURF, INTRALASE, cataract surgery, glaucoma treatment, retina care and comprehensive ophthalmology services near Nagarjuna Sagar Road.",
       url: SITE_URL,
       telephone: `+91${HOSPITAL.phone}`,
       email: HOSPITAL.email,
       image: [
         `${SITE_URL}/images/banner.png`,
         `${SITE_URL}/images/footer.png`,
+        ...SERVICES.slice(0, 6).map((s) => `${SITE_URL}${s.image}`),
       ],
       logo: `${SITE_URL}/images/logo.png`,
       address: {
@@ -85,6 +87,7 @@ export function LocalBusinessSchema() {
         HOSPITAL.social.facebook,
         HOSPITAL.social.instagram,
         HOSPITAL.social.youtube,
+        HOSPITAL.social.gmb,
       ],
       contactPoint: [
         {
@@ -95,6 +98,20 @@ export function LocalBusinessSchema() {
           availableLanguage: ["English", "Telugu", "Hindi"],
         },
       ],
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Eye Care Services",
+        itemListElement: SERVICES.map((service) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "MedicalProcedure",
+            name: service.title,
+            description: service.shortDesc,
+            url: `${SITE_URL}/services/${service.slug}`,
+            image: `${SITE_URL}${service.image}`,
+          },
+        })),
+      },
     },
     {
       "@context": "https://schema.org",
@@ -103,7 +120,7 @@ export function LocalBusinessSchema() {
       url: SITE_URL,
       name: HOSPITAL.name,
       description:
-        "Official website of Sarojana Eye Hospital, Hasthinapuram, Hyderabad.",
+        "Official website of Sarojana Eye Hospital, Hasthinapuram, Hyderabad — LASIK, SMILE, TRANS PRK, cataract, glaucoma and comprehensive eye care.",
       publisher: { "@id": `${SITE_URL}/#clinic` },
       inLanguage: "en-IN",
     },
@@ -118,6 +135,7 @@ export function LocalBusinessSchema() {
         HOSPITAL.social.facebook,
         HOSPITAL.social.instagram,
         HOSPITAL.social.youtube,
+        HOSPITAL.social.gmb,
       ],
     },
   ];

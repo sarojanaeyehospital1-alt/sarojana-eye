@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
@@ -9,7 +10,7 @@ import {
   ServiceSidebar,
 } from "@/components/services/ServiceSidebar";
 import { HOSPITAL, SITE_URL } from "@/lib/constants/hospital";
-import { getServiceBySlug, SERVICES } from "@/lib/constants/services";
+import { getServiceBySlug } from "@/lib/constants/services";
 import { getIcon } from "@/lib/utils/icons";
 import type { Service } from "@/lib/types";
 
@@ -21,28 +22,59 @@ export function ServiceDetailView({ service }: { service: Service }) {
     .map((slug) => getServiceBySlug(slug))
     .filter(Boolean) as Service[];
 
-  const procedureSchema = {
-    "@context": "https://schema.org",
-    "@type": "MedicalProcedure",
-    name: service.title,
-    description: content.whatIs,
-    procedureType: service.category,
-    bodyLocation: "Eye",
-    followup: content.recovery.map((r) => `${r.milestone}: ${r.note}`).join("; "),
-    howPerformed: content.steps.map((s) => s.title).join(" → "),
-    preparation: "Pre-operative evaluation required",
-    status: "https://schema.org/EventScheduled",
-    url: `${SITE_URL}/services/${service.slug}`,
-    recognizingAuthority: {
-      "@type": "Organization",
-      name: "All India Ophthalmological Society",
+  const pageUrl = `${SITE_URL}/services/${service.slug}`;
+  const imageUrl = `${SITE_URL}${service.image}`;
+
+  const schema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "@id": `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: content.metaTitle,
+      description: content.metaDesc,
+      inLanguage: "en-IN",
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${pageUrl}#procedure` },
+      primaryImageOfPage: {
+        "@type": "ImageObject",
+        url: imageUrl,
+        contentUrl: imageUrl,
+        caption: service.imageAlt,
+      },
+      breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
     },
-    provider: {
-      "@type": "MedicalClinic",
-      name: HOSPITAL.name,
-      address: HOSPITAL.address.full,
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalProcedure",
+      "@id": `${pageUrl}#procedure`,
+      name: service.title,
+      alternateName: service.shortDesc,
+      description: content.whatIs,
+      procedureType: service.category,
+      bodyLocation: "Eye",
+      image: imageUrl,
+      followup: content.recovery
+        .map((r) => `${r.milestone}: ${r.note}`)
+        .join("; "),
+      howPerformed: content.steps.map((s) => s.title).join(" → "),
+      preparation: "Pre-operative evaluation required",
+      status: "https://schema.org/EventScheduled",
+      url: pageUrl,
+      mainEntityOfPage: { "@id": `${pageUrl}#webpage` },
+      recognizingAuthority: {
+        "@type": "Organization",
+        name: "All India Ophthalmological Society",
+      },
+      provider: {
+        "@type": "MedicalClinic",
+        "@id": `${SITE_URL}/#clinic`,
+        name: HOSPITAL.name,
+        address: HOSPITAL.address.full,
+        url: SITE_URL,
+      },
     },
-  };
+  ];
 
   const crumbs = [
     { name: "Home", href: "/" },
@@ -52,8 +84,8 @@ export function ServiceDetailView({ service }: { service: Service }) {
 
   return (
     <>
-      <SchemaOrg data={procedureSchema} />
-      <BreadcrumbSchema items={crumbs} />
+      <SchemaOrg data={schema} />
+      <BreadcrumbSchema items={crumbs} id={`${pageUrl}#breadcrumb`} />
 
       <PageHeroWave
         title={`${service.title} in Hyderabad | Sarojana Eye Hospital`}
@@ -67,6 +99,16 @@ export function ServiceDetailView({ service }: { service: Service }) {
         <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
           <div className="space-y-12">
             <section>
+              <div className="relative mb-6 aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-teal-50 shadow-card">
+                <Image
+                  src={service.image}
+                  alt={service.imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 720px"
+                  priority
+                  className="object-cover"
+                />
+              </div>
               <h2 className="font-heading text-2xl font-bold text-teal-800 sm:text-[28px]">
                 What is {service.title}?
               </h2>
@@ -154,24 +196,31 @@ export function ServiceDetailView({ service }: { service: Service }) {
                   You may also be interested in
                 </h2>
                 <div className="mt-5 grid gap-4 sm:grid-cols-3">
-                  {related.map((rel) => {
-                    const RelIcon = getIcon(rel.icon);
-                    return (
-                      <Link
-                        key={rel.id}
-                        href={`/services/${rel.slug}`}
-                        className="rounded-2xl border border-border bg-white p-4 shadow-card transition hover:border-teal-600 hover:shadow-card-hover"
-                      >
-                        <RelIcon className="h-6 w-6 text-teal-600" />
-                        <p className="mt-2 font-heading font-semibold text-foreground">
+                  {related.map((rel) => (
+                    <Link
+                      key={rel.id}
+                      href={`/services/${rel.slug}`}
+                      className="overflow-hidden rounded-2xl border border-border bg-white shadow-card transition hover:border-teal-600 hover:shadow-card-hover"
+                    >
+                      <div className="relative aspect-[16/10] bg-teal-50">
+                        <Image
+                          src={rel.image}
+                          alt={rel.imageAlt}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="p-4">
+                        <p className="font-heading font-semibold text-foreground">
                           {rel.title}
                         </p>
                         <p className="mt-1 line-clamp-2 text-xs text-muted">
                           {rel.shortDesc}
                         </p>
-                      </Link>
-                    );
-                  })}
+                      </div>
+                    </Link>
+                  ))}
                 </div>
               </section>
             )}

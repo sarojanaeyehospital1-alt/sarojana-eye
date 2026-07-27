@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about", priority: 0.9, changeFrequency: "monthly" },
     { path: "/doctors", priority: 0.9, changeFrequency: "monthly" },
     { path: "/services", priority: 0.9, changeFrequency: "weekly" },
-    { path: "/laser-procedures", priority: 0.85, changeFrequency: "monthly" },
+    { path: "/laser-procedures", priority: 0.9, changeFrequency: "weekly" },
     { path: "/appointments", priority: 0.9, changeFrequency: "weekly" },
     { path: "/gallery", priority: 0.7, changeFrequency: "weekly" },
     { path: "/insurance", priority: 0.7, changeFrequency: "monthly" },
@@ -32,13 +32,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
     priority: 0.75,
+    images: [`${SITE_URL}${doctor.image}`],
   }));
 
   const serviceRoutes = SERVICES.map((service) => ({
     url: `${SITE_URL}/services/${service.slug}`,
     lastModified: new Date(),
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    priority: service.category === "Laser" ? 0.85 : 0.8,
+    images: [`${SITE_URL}${service.image}`],
   }));
 
   return [...pages, ...doctorRoutes, ...serviceRoutes];

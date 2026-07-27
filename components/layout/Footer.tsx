@@ -7,7 +7,7 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaFacebookF, FaGoogle, FaInstagram, FaYoutube } from "react-icons/fa";
 import { HOSPITAL, NAV_LINKS } from "@/lib/constants/hospital";
 import { SERVICES } from "@/lib/constants/services";
 
@@ -100,6 +100,11 @@ export function Footer() {
                 href: HOSPITAL.social.youtube,
                 label: "YouTube",
                 icon: FaYoutube,
+              },
+              {
+                href: HOSPITAL.social.gmb,
+                label: "Google Business Profile",
+                icon: FaGoogle,
               },
             ].map((item) => (
               <a

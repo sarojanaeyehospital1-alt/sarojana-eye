@@ -21,6 +21,8 @@ export async function generateMetadata({
     description: service.content.metaDesc,
     path: `/services/${service.slug}`,
     keywords: service.keywords,
+    image: service.image,
+    imageAlt: service.imageAlt,
   });
 }
 

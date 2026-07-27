@@ -16,9 +16,10 @@ export function LaserProcedures() {
           {LASER_PROCEDURES.map((proc) => {
             const Icon = getIcon(proc.icon);
             return (
-              <article
+              <Link
                 key={proc.id}
-                className="snap-start min-w-[240px] rounded-2xl border border-white/20 bg-white/10 p-5 text-white backdrop-blur lg:min-w-0"
+                href={`/services/${proc.slug}`}
+                className="snap-start min-w-[240px] rounded-2xl border border-white/20 bg-white/10 p-5 text-white backdrop-blur transition hover:bg-white/15 lg:min-w-0"
               >
                 <Icon className="mb-3 h-7 w-7 text-primary-light" />
                 <h3 className="font-heading text-xl font-bold">{proc.title}</h3>
@@ -26,7 +27,7 @@ export function LaserProcedures() {
                 <p className="mt-3 text-sm leading-relaxed text-white/85">
                   {proc.desc}
                 </p>
-              </article>
+              </Link>
             );
           })}
         </div>
