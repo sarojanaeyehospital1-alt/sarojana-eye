@@ -12,9 +12,9 @@ export function ServicesOverview() {
           subtitle="Comprehensive Ophthalmology Services at Hasthinapuram, Hyderabad"
         />
 
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+            <ServiceCard key={service.id} service={service} compact />
           ))}
         </div>
 
