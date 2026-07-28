@@ -15,20 +15,6 @@ import { HOSPITAL } from "@/lib/constants/hospital";
 
 const SLIDES = [
   {
-    id: "eye-care",
-    badge: "20+ Years | 25,000+ Patients Treated",
-    title: "Advanced Eye Care in the Heart of Hyderabad",
-    subtitle: "LASIK • Cataract • Glaucoma • Retina Specialists",
-    description:
-      "Sarojana Eye Hospital, Hasthinapuram's most trusted ophthalmology centre — 20+ years of surgical excellence near Nagarjuna Sagar Road.",
-    image: "/images/banner/banner-1.png",
-    imageAlt:
-      "Sarojana Eye Hospital – Advanced eye care in Hasthinapuram, Hyderabad",
-    primaryCta: { label: "Book Appointment", href: "/appointments" },
-    secondaryCta: { label: "Explore Services", href: "/services" },
-    showWhatsapp: true,
-  },
-  {
     id: "lasik",
     badge: "Laser Vision Correction",
     title: "See Clearly with Expert LASIK Surgery",
@@ -54,9 +40,23 @@ const SLIDES = [
     secondaryCta: { label: "Book Appointment", href: "/appointments" },
     showWhatsapp: false,
   },
+  {
+    id: "eye-care",
+    badge: "20+ Years | 25,000+ Patients Treated",
+    title: "Advanced Eye Care in the Heart of Hyderabad",
+    subtitle: "LASIK • Cataract • Glaucoma • Retina Specialists",
+    description:
+      "Sarojana Eye Hospital, Hasthinapuram's most trusted ophthalmology centre — 20+ years of surgical excellence near Nagarjuna Sagar Road.",
+    image: "/images/banner/banner-1.png",
+    imageAlt:
+      "Sarojana Eye Hospital – Advanced eye care in Hasthinapuram, Hyderabad",
+    primaryCta: { label: "Book Appointment", href: "/appointments" },
+    secondaryCta: { label: "Explore Services", href: "/services" },
+    showWhatsapp: true,
+  },
 ] as const;
 
-const AUTO_PLAY_MS = 6000;
+const AUTO_PLAY_MS = 3000;
 
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
@@ -82,7 +82,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative h-[min(100vh,900px)] min-h-[560px] w-full overflow-hidden"
+      className="relative h-[min(100vh,820px)] min-h-[480px] w-full overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       aria-roledescription="carousel"

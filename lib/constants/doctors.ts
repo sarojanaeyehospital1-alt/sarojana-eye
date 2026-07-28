@@ -11,8 +11,8 @@ export const DOCTORS: Doctor[] = [
     categoryLabel: "Phaco & LASIK Surgery",
     meetLabel: "Meet your surgeon",
     stats: [
-      { value: "20+", label: "Years" },
-      { value: "FICO", label: "UK Fellowship" },
+      { value: "20+ Years", label: "Experience" },
+      { value: "FICO UK", label: "Fellowship" },
       { value: "Aravind", label: "Trained" },
     ],
     qualifications: [
@@ -114,7 +114,7 @@ export const DOCTORS: Doctor[] = [
     stats: [
       { value: "LV Prasad", label: "Trained" },
       { value: "Phaco", label: "& LASIK" },
-      { value: "Paediatric", label: "Eye Care" },
+      { value: "Paediatric", label: "Care" },
     ],
     qualifications: [
       "MBBS",

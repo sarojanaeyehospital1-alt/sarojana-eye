@@ -1,18 +1,40 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarDays } from "lucide-react";
+import { ArrowUp, CalendarDays } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { HOSPITAL } from "@/lib/constants/hospital";
 
 export function StickyBookButton() {
   const pathname = usePathname();
   const hideBook = pathname === "/appointments";
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setShowScrollTop(window.scrollY > 300);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <div className="fixed bottom-[20px] right-[20px] z-40 hidden flex-col items-end gap-3 sm:flex">
-      {/* WhatsApp on top */}
+    <div className="fixed bottom-[70px] right-[20px] z-40 hidden flex-col items-end gap-3 sm:flex">
+      {/* Scroll / swipe up */}
+      {showScrollTop ? (
+        <button
+          type="button"
+          aria-label="Scroll to top"
+          title="Back to top"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-teal-100 bg-white text-teal-700 shadow-brand transition hover:scale-105 hover:bg-teal-50"
+        >
+          <ArrowUp className="h-5 w-5" />
+        </button>
+      ) : null}
+
+      {/* WhatsApp */}
       <a
         href={HOSPITAL.whatsappUrl}
         target="_blank"
@@ -24,7 +46,7 @@ export function StickyBookButton() {
         <FaWhatsapp className="h-7 w-7" />
       </a>
 
-      {/* Book Appointment below WhatsApp */}
+      {/* Book Appointment */}
       {!hideBook ? (
         <Link
           href="/appointments"
