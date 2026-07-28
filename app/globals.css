@@ -117,3 +117,54 @@ h4,
 .snap-start {
   scroll-snap-align: start;
 }
+
+.doctor-mesh-bg {
+  background-color: #f8fffe;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(34, 168, 191, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(26, 122, 138, 0.06) 0px, transparent 50%);
+}
+
+.doctor-card-frame {
+  position: relative;
+}
+
+.doctor-card-frame::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, #22a8bf, #1a7a8a, #0f5a68);
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.doctor-card-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1.15rem;
+  background: linear-gradient(to top, rgba(15, 90, 104, 0.35), transparent 45%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.stat-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(34, 168, 191, 0.12) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+}

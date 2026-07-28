@@ -16,7 +16,7 @@ import { SchemaOrg } from "@/components/seo/SchemaOrg";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
 import { ClinicTimingsBox } from "@/components/shared/PageHeroWave";
-import { DoctorListingCard } from "@/components/doctors/DoctorListingCard";
+import { DoctorProfileCard } from "@/components/doctors/DoctorProfileCard";
 import { getDoctorBySlug, DOCTORS } from "@/lib/constants/doctors";
 import { HOSPITAL, SITE_URL } from "@/lib/constants/hospital";
 import { getIcon } from "@/lib/utils/icons";
@@ -284,8 +284,8 @@ export default async function DoctorDetailPage({ params }: Props) {
                   Also consult with our other specialist
                 </h2>
                 <div className="grid gap-6">
-                  {otherDoctors.map((d, i) => (
-                    <DoctorListingCard key={d.id} doctor={d} index={i} />
+                  {otherDoctors.map((d) => (
+                    <DoctorProfileCard key={d.id} doctor={d} compact />
                   ))}
                 </div>
               </section>

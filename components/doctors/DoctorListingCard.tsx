@@ -2,104 +2,115 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { CalendarDays, Phone } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowUpRight, CalendarDays, Clock3, Phone } from "lucide-react";
 import type { Doctor } from "@/lib/types";
-import { ClinicTimingsBox } from "@/components/shared/PageHeroWave";
 
 export function DoctorListingCard({
   doctor,
   index = 0,
+  variant = "full",
 }: {
   doctor: Doctor;
   index?: number;
+  variant?: "full" | "preview";
 }) {
+  const reduceMotion = useReducedMotion();
+  const currentRole = doctor.affiliations.find((a) => a.tag === "Current");
+
   return (
     <motion.article
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
-      className="group overflow-hidden rounded-3xl border border-teal-600/12 bg-white shadow-[0_8px_40px_rgba(26,122,138,0.15)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_8px_40px_rgba(26,122,138,0.22)]"
+      initial={reduceMotion ? false : { opacity: 0, y: 16 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-24px" }}
+      transition={{ duration: 0.35, delay: index * 0.06 }}
+      className="flex h-full flex-col overflow-hidden rounded-2xl border border-border/80 bg-white shadow-card transition hover:border-teal-600/25 hover:shadow-card-hover"
     >
-      <div
-        className="px-6 pb-8 pt-10 text-center text-white"
-        style={{
-          background:
-            "linear-gradient(135deg, #0F5A68 0%, #1A7A8A 55%, #22A8BF 100%)",
-        }}
-      >
-        <div className="mx-auto h-40 w-40 overflow-hidden rounded-full border-4 border-white shadow-hero">
+      <div className="bg-gradient-to-br from-teal-800 via-teal-700 to-teal-600 px-5 pb-7 pt-8 text-center text-white sm:px-6 sm:pb-8 sm:pt-9">
+        <div className="mx-auto h-24 w-24 overflow-hidden rounded-full border-[3px] border-white/90 shadow-lg ring-4 ring-white/20 sm:h-28 sm:w-28">
           <Image
             src={doctor.image}
             alt={`${doctor.name} – Eye Surgeon at Sarojana Eye Hospital, Hasthinapuram, Hyderabad`}
-            width={160}
-            height={160}
+            width={112}
+            height={112}
             className="h-full w-full object-cover"
           />
         </div>
-        <h2 className="mt-5 font-heading text-2xl font-bold">{doctor.name}</h2>
-        <span className="mt-2 inline-flex rounded-full border border-white/30 bg-white/15 px-3 py-1 text-sm font-medium backdrop-blur">
+
+        <h2 className="mt-4 font-heading text-lg font-bold leading-tight sm:text-xl">
+          {doctor.name}
+        </h2>
+        <p className="mt-1.5 text-xs text-white/80 sm:text-sm">{doctor.title}</p>
+        <p className="mt-3 inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-white ring-1 ring-white/25 sm:text-sm">
           {doctor.specialisation}
-        </span>
+        </p>
       </div>
 
-      <div className="space-y-5 p-6 sm:p-7">
-        <div className="flex flex-wrap justify-center gap-2 sm:justify-start">
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <div className="flex flex-wrap justify-center gap-1.5">
           {doctor.shortBadges.map((badge) => (
             <span
               key={badge}
-              className="rounded-full border border-teal-600/30 bg-teal-600/10 px-3 py-1 text-xs font-semibold text-teal-600"
+              className="rounded-md border border-teal-100 bg-teal-50/60 px-2 py-0.5 text-[11px] font-medium text-teal-800 sm:text-xs"
             >
               {badge}
             </span>
           ))}
         </div>
 
-        <div className="border-l-2 border-teal-500 pl-4">
-          {doctor.affiliations.slice(0, 2).map((item) => (
-            <div key={`${item.hospital}-${item.role}`} className="relative mb-3 last:mb-0">
-              <span className="absolute -left-[1.4rem] top-1.5 h-2.5 w-2.5 rounded-full bg-teal-600" />
-              <p className="text-sm font-semibold text-foreground">{item.role}</p>
-              <p className="text-sm text-muted">
-                {item.hospital}{" "}
-                <span className="rounded bg-teal-50 px-1.5 py-0.5 text-[10px] font-bold uppercase text-teal-700">
-                  {item.tag}
-                </span>
-              </p>
-            </div>
-          ))}
-        </div>
+        {variant === "full" && currentRole ? (
+          <div className="mt-5 border-y border-border/70 py-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-teal-700">
+              Current Role
+            </p>
+            <p className="mt-1.5 text-sm font-medium text-foreground">
+              {currentRole.role}
+            </p>
+            <p className="text-sm text-muted">{currentRole.hospital}</p>
+          </div>
+        ) : null}
 
-        <ClinicTimingsBox />
-
-        <p className="line-clamp-3 text-sm italic leading-relaxed text-muted">
+        <p
+          className={`mt-5 text-sm leading-relaxed text-muted ${
+            variant === "preview" ? "line-clamp-2" : "line-clamp-3"
+          }`}
+        >
           {doctor.bio}
         </p>
 
-        <div className="grid gap-2 sm:grid-cols-2">
-          <a
-            href={`tel:+91${doctor.phone}`}
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-teal-600 px-4 py-3 text-sm font-semibold text-teal-600 transition hover:bg-teal-50"
-          >
-            <Phone className="h-4 w-4" />
-            Call Doctor
-          </a>
+        {variant === "full" ? (
+          <p className="mt-4 flex items-start gap-2 text-xs text-muted sm:text-sm">
+            <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
+            <span>{doctor.experience}</span>
+          </p>
+        ) : null}
+
+        <div className="mt-auto space-y-3 pt-6">
+          <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+            <a
+              href={`tel:+91${doctor.phone}`}
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-teal-600/30 bg-white px-4 text-sm font-semibold text-teal-700 transition hover:border-teal-600 hover:bg-teal-50"
+            >
+              <Phone className="h-4 w-4 shrink-0" />
+              Call
+            </a>
+            <Link
+              href={`/appointments?doctor=${doctor.slug}`}
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded-lg bg-teal-600 px-4 text-sm font-semibold text-white transition hover:bg-teal-800"
+            >
+              <CalendarDays className="h-4 w-4 shrink-0" />
+              Book
+            </Link>
+          </div>
+
           <Link
-            href={`/appointments?doctor=${doctor.slug}`}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-teal-600 px-4 py-3 text-sm font-semibold text-white transition hover:bg-teal-800"
+            href={`/doctors/${doctor.slug}`}
+            className="inline-flex w-full items-center justify-center gap-1.5 py-1 text-sm font-semibold text-teal-700 transition hover:text-teal-800"
           >
-            <CalendarDays className="h-4 w-4" />
-            Book
+            View full profile
+            <ArrowUpRight className="h-4 w-4" />
           </Link>
         </div>
-
-        <Link
-          href={`/doctors/${doctor.slug}`}
-          className="inline-flex text-sm font-semibold text-teal-600 underline-offset-4 hover:underline"
-        >
-          View Full Profile →
-        </Link>
       </div>
     </motion.article>
   );

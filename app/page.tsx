@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { HeroSection } from "@/components/home/HeroSection";
 import { StatsCounter } from "@/components/home/StatsCounter";
 import { ServicesOverview } from "@/components/home/ServicesOverview";
-import { DoctorsPreview } from "@/components/home/DoctorsPreview";
 import { LaserProcedures } from "@/components/home/LaserProcedures";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { AppointmentCTA } from "@/components/home/AppointmentCTA";
@@ -34,13 +33,12 @@ export default function HomePage() {
       <HeroSection />
       <StatsCounter />
       <ServicesOverview />
-      <DoctorsPreview />
       <LaserProcedures />
       <WhyChooseUs />
       <AppointmentCTA />
       <LocationMap />
       <InsuranceSection />
-      <FaqAccordion faqs={HOME_FAQS} />
+      <FaqAccordion faqs={HOME_FAQS} columns={2} />
     </>
   );
 }

@@ -6,8 +6,15 @@ export const DOCTORS: Doctor[] = [
     id: "dr-chirra-karunakar-reddy",
     slug: "dr-chirra-karunakar-reddy",
     name: "Dr. Chirra Karunakar Reddy",
-    title: "MBBS, M.S. (Ophthal), F.I.C.O (U.K.)",
+    title: "Phaco & LASIK Surgeon — Anterior Segment Specialist",
     specialisation: "Phaco & LASIK Surgeon",
+    categoryLabel: "Phaco & LASIK Surgery",
+    meetLabel: "Meet your surgeon",
+    stats: [
+      { value: "20+", label: "Years" },
+      { value: "FICO", label: "UK Fellowship" },
+      { value: "Aravind", label: "Trained" },
+    ],
     qualifications: [
       "MBBS",
       "M.S. (Ophthalmology)",
@@ -100,8 +107,15 @@ export const DOCTORS: Doctor[] = [
     id: "dr-papagari-anitha-reddy",
     slug: "dr-papagari-anitha-reddy",
     name: "Dr. Papagari Anitha Reddy",
-    title: "MBBS, D.O.",
+    title: "Consultant Ophthalmologist — Phaco & LASIK Surgeon",
     specialisation: "Phaco & LASIK Surgeon",
+    categoryLabel: "Paediatric & General Ophthalmology",
+    meetLabel: "Meet your eye specialist",
+    stats: [
+      { value: "LV Prasad", label: "Trained" },
+      { value: "Phaco", label: "& LASIK" },
+      { value: "Paediatric", label: "Eye Care" },
+    ],
     qualifications: [
       "MBBS",
       "D.O. (Diploma in Ophthalmology)",

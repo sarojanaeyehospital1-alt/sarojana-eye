@@ -25,17 +25,26 @@ export type DoctorAffiliation = {
   tag: string;
 };
 
+export type DoctorStat = {
+  value: string;
+  label: string;
+};
+
 export type Doctor = {
   id: string;
   slug: string;
   name: string;
   title: string;
   specialisation: string;
+  categoryLabel: string;
+  meetLabel: string;
   qualifications: string[];
   qualificationDetails: DoctorQualification[];
   experience: string;
   affiliations: DoctorAffiliation[];
   phone: string;
+  email?: string;
+  stats: readonly DoctorStat[];
   expertise: string[];
   image: string;
   bio: string;
