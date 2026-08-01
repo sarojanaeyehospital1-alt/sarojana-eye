@@ -93,16 +93,16 @@ export default function ServicesPage() {
             Our doctors will guide you to the right treatment after a
             comprehensive eye evaluation
           </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
+          <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <a
               href={HOSPITAL.phoneHref}
-              className="inline-flex rounded-xl border border-teal-600 px-5 py-3 text-sm font-semibold text-teal-600 hover:bg-teal-50"
+              className="inline-flex min-h-11 items-center justify-center rounded-xl border border-teal-600 px-5 py-3 text-sm font-semibold text-teal-600 hover:bg-teal-50"
             >
               📞 Call Us
             </a>
             <Link
               href="/appointments"
-              className="inline-flex rounded-xl bg-teal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-teal-800"
+              className="inline-flex min-h-11 items-center justify-center rounded-xl bg-teal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-teal-800"
             >
               📅 Book a Checkup
             </Link>

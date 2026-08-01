@@ -34,27 +34,27 @@ export function LasikEligibilityChecker() {
 
   return (
     <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-card">
-      <div className="border-b border-border bg-teal-50/80 px-6 py-5">
-        <div className="flex items-center gap-3">
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-teal-600 text-white">
+      <div className="border-b border-border bg-teal-50/80 px-4 py-4 sm:px-6 sm:py-5">
+        <div className="flex items-start gap-3 sm:items-center">
+          <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-600 text-white sm:h-11 sm:w-11">
             <ClipboardCheck className="h-5 w-5" />
           </span>
-          <div>
-            <h3 className="font-heading text-2xl font-semibold text-teal-800">
+          <div className="min-w-0">
+            <h3 className="font-heading text-lg font-semibold text-teal-800 sm:text-2xl">
               LASIK Eligibility Checker
             </h3>
-            <p className="text-sm text-muted">
+            <p className="mt-0.5 text-xs text-muted sm:text-sm">
               Quick guidance only — final suitability needs a clinical evaluation.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="space-y-4 p-6">
+      <div className="space-y-3 p-4 sm:space-y-4 sm:p-6">
         {QUESTIONS.map((q) => (
           <fieldset
             key={q.id}
-            className="rounded-2xl border border-border bg-background/40 p-4"
+            className="rounded-xl border border-border bg-background/40 p-3.5 sm:rounded-2xl sm:p-4"
           >
             <legend className="px-1 text-sm font-medium text-foreground">
               {q.question}
@@ -68,7 +68,7 @@ export function LasikEligibilityChecker() {
                     setSubmitted(false);
                     setAnswers((prev) => ({ ...prev, [q.id]: val }));
                   }}
-                  className={`rounded-xl px-4 py-2 text-sm font-semibold transition ${
+                  className={`min-h-10 flex-1 rounded-xl px-4 py-2 text-sm font-semibold transition sm:flex-none ${
                     answers[q.id] === val
                       ? "bg-teal-600 text-white shadow-card"
                       : "border border-border bg-white text-muted hover:border-teal-600 hover:text-teal-700"

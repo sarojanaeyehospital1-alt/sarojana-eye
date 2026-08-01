@@ -82,6 +82,9 @@ export function ServiceDetailView({ service }: { service: Service }) {
     { name: service.title, href: `/services/${service.slug}` },
   ];
 
+  const sectionTitle =
+    "font-heading text-xl font-bold text-teal-800 sm:text-2xl lg:text-[28px]";
+
   return (
     <>
       <SchemaOrg data={schema} />
@@ -95,11 +98,11 @@ export function ServiceDetailView({ service }: { service: Service }) {
         icon={<Icon className="h-16 w-16 text-white" />}
       />
 
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-10 lg:grid-cols-[1fr_320px]">
-          <div className="space-y-12">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_320px]">
+          <div className="min-w-0 space-y-8 sm:space-y-10 lg:space-y-12">
             <section>
-              <div className="relative mb-6 aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-teal-50 shadow-card">
+              <div className="relative mb-5 aspect-[16/10] overflow-hidden rounded-xl border border-border bg-teal-50 shadow-card sm:mb-6 sm:aspect-[16/9] sm:rounded-2xl">
                 <Image
                   src={service.image}
                   alt={service.imageAlt}
@@ -109,22 +112,27 @@ export function ServiceDetailView({ service }: { service: Service }) {
                   className="object-cover"
                 />
               </div>
-              <h2 className="font-heading text-2xl font-bold text-teal-800 sm:text-[28px]">
-                What is {service.title}?
-              </h2>
-              <p className="mt-4 leading-relaxed text-muted">{content.whatIs}</p>
+              <h2 className={sectionTitle}>What is {service.title}?</h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:mt-4 sm:text-base">
+                {content.whatIs}
+              </p>
             </section>
 
+            {/* Mobile: book form early; full sidebar (timings/doctors/location) after content */}
+            <div className="lg:hidden">
+              <ServiceSidebar bookOnly />
+            </div>
+
             <section>
-              <h2 className="font-heading text-2xl font-bold text-teal-800 sm:text-[28px]">
-                Why is {service.title} Important?
-              </h2>
-              <ul className="mt-5 space-y-4">
+              <h2 className={sectionTitle}>Why is {service.title} Important?</h2>
+              <ul className="mt-4 space-y-3 sm:mt-5 sm:space-y-4">
                 {content.whyImportant.map((item) => (
-                  <li key={item.title} className="flex gap-3">
-                    <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-teal-600" />
-                    <div>
-                      <p className="font-semibold text-foreground">{item.title}</p>
+                  <li key={item.title} className="flex gap-2.5 sm:gap-3">
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-teal-600" />
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-foreground sm:text-base">
+                        {item.title}
+                      </p>
                       <p className="mt-1 text-sm text-muted">{item.desc}</p>
                     </div>
                   </li>
@@ -133,21 +141,21 @@ export function ServiceDetailView({ service }: { service: Service }) {
             </section>
 
             <section>
-              <h2 className="font-heading text-2xl font-bold text-teal-800 sm:text-[28px]">
+              <h2 className={sectionTitle}>
                 How is {service.title} Performed at Sarojana Eye Hospital?
               </h2>
-              <div className="mt-6 space-y-4">
+              <div className="mt-5 space-y-3 sm:mt-6 sm:space-y-4">
                 {content.steps.map((step) => (
                   <div
                     key={step.number}
-                    className="rounded-2xl border border-border bg-white p-5 shadow-card"
+                    className="rounded-xl border border-border bg-white p-4 shadow-card sm:rounded-2xl sm:p-5"
                   >
-                    <div className="flex items-start gap-4">
-                      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-teal-600 font-heading text-lg font-bold text-white">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-teal-600 font-heading text-base font-bold text-white sm:h-12 sm:w-12 sm:rounded-xl sm:text-lg">
                         {step.number}
                       </span>
-                      <div>
-                        <h3 className="font-heading text-lg font-semibold text-foreground">
+                      <div className="min-w-0">
+                        <h3 className="font-heading text-base font-semibold text-foreground sm:text-lg">
                           {step.title}
                         </h3>
                         <p className="mt-1 text-sm leading-relaxed text-muted">
@@ -161,7 +169,7 @@ export function ServiceDetailView({ service }: { service: Service }) {
             </section>
 
             <section>
-              <h2 className="mb-5 font-heading text-2xl font-bold text-teal-800 sm:text-[28px]">
+              <h2 className={`${sectionTitle} mb-4 sm:mb-5`}>
                 Who Should Consider {service.title}?
               </h2>
               <CandidateLists
@@ -171,14 +179,14 @@ export function ServiceDetailView({ service }: { service: Service }) {
             </section>
 
             <section>
-              <h2 className="font-heading text-2xl font-bold text-teal-800 sm:text-[28px]">
-                Recovery & Aftercare
-              </h2>
-              <div className="mt-6 border-l-2 border-teal-500 pl-6">
+              <h2 className={sectionTitle}>Recovery & Aftercare</h2>
+              <div className="mt-5 border-l-2 border-teal-500 pl-4 sm:mt-6 sm:pl-6">
                 {content.recovery.map((item) => (
-                  <div key={item.milestone} className="relative mb-6 last:mb-0">
-                    <span className="absolute -left-[1.9rem] top-1 h-3 w-3 rounded-full bg-teal-600 ring-4 ring-teal-50" />
-                    <p className="font-semibold text-teal-800">{item.milestone}</p>
+                  <div key={item.milestone} className="relative mb-5 last:mb-0 sm:mb-6">
+                    <span className="absolute -left-[1.4rem] top-1 h-2.5 w-2.5 rounded-full bg-teal-600 ring-4 ring-teal-50 sm:-left-[1.9rem] sm:h-3 sm:w-3" />
+                    <p className="text-sm font-semibold text-teal-800 sm:text-base">
+                      {item.milestone}
+                    </p>
                     <p className="mt-1 text-sm text-muted">{item.note}</p>
                   </div>
                 ))}
@@ -188,31 +196,30 @@ export function ServiceDetailView({ service }: { service: Service }) {
             <FaqAccordion
               faqs={content.faqs}
               title={`Frequently Asked Questions about ${service.title}`}
+              embedded
             />
 
             {related.length > 0 && (
               <section>
-                <h2 className="font-heading text-2xl font-bold text-teal-800">
-                  You may also be interested in
-                </h2>
-                <div className="mt-5 grid gap-4 sm:grid-cols-3">
+                <h2 className={sectionTitle}>You may also be interested in</h2>
+                <div className="mt-4 grid gap-3 sm:mt-5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
                   {related.map((rel) => (
                     <Link
                       key={rel.id}
                       href={`/services/${rel.slug}`}
-                      className="overflow-hidden rounded-2xl border border-border bg-white shadow-card transition hover:border-teal-600 hover:shadow-card-hover"
+                      className="overflow-hidden rounded-xl border border-border bg-white shadow-card transition hover:border-teal-600 hover:shadow-card-hover sm:rounded-2xl"
                     >
                       <div className="relative aspect-[16/10] bg-teal-50">
                         <Image
                           src={rel.image}
                           alt={rel.imageAlt}
                           fill
-                          sizes="(max-width: 768px) 100vw, 33vw"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           className="object-cover"
                         />
                       </div>
-                      <div className="p-4">
-                        <p className="font-heading font-semibold text-foreground">
+                      <div className="p-3.5 sm:p-4">
+                        <p className="font-heading text-sm font-semibold text-foreground sm:text-base">
                           {rel.title}
                         </p>
                         <p className="mt-1 line-clamp-2 text-xs text-muted">
@@ -224,9 +231,15 @@ export function ServiceDetailView({ service }: { service: Service }) {
                 </div>
               </section>
             )}
+
+            {/* Mobile: remaining sidebar info after main content */}
+            <div className="lg:hidden">
+              <ServiceSidebar infoOnly />
+            </div>
           </div>
 
-          <div>
+          {/* Desktop sticky sidebar */}
+          <div className="hidden min-w-0 lg:block">
             <ServiceSidebar />
           </div>
         </div>

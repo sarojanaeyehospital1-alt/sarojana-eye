@@ -166,32 +166,36 @@ export default function LaserProceduresPage() {
       </section>
 
       {/* Procedures grid */}
-      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-500">
             Our Technologies
           </p>
-          <h2 className="mt-2 font-heading text-3xl font-bold text-teal-800 sm:text-4xl">
+          <h2 className="mt-2 font-heading text-2xl font-bold text-teal-800 sm:text-3xl lg:text-4xl">
             Laser Procedures We Offer
           </h2>
           <div className="mx-auto mt-3 h-1 w-14 rounded-full bg-teal-500" />
-          <p className="mx-auto mt-4 max-w-2xl text-muted">
+          <p className="mx-auto mt-4 max-w-2xl text-sm text-muted sm:text-base">
             Choose the technology that fits your eyes and lifestyle — guided by
             your surgeon after a full assessment.
           </p>
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {LASER_PROCEDURES.map((proc) => {
             const Icon = getIcon(proc.icon);
             const service = getServiceBySlug(proc.slug);
             return (
               <article
                 key={proc.id}
-                className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-card transition hover:-translate-y-1 hover:border-teal-600 hover:shadow-card-hover"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-card transition hover:-translate-y-1 hover:border-teal-600 hover:shadow-card-hover sm:rounded-3xl"
               >
                 {service?.image ? (
-                  <div className="relative aspect-[16/10] overflow-hidden bg-teal-50">
+                  <Link
+                    href={`/services/${proc.slug}`}
+                    className="relative block aspect-[16/10] overflow-hidden bg-teal-50"
+                    aria-label={`View ${proc.title} details`}
+                  >
                     <Image
                       src={service.image}
                       alt={service.imageAlt}
@@ -199,29 +203,31 @@ export default function LaserProceduresPage() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover transition duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-teal-900/85 to-transparent px-5 pb-4 pt-10 text-white">
-                      <h3 className="font-heading text-2xl font-bold">
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-teal-900/85 to-transparent px-4 pb-3.5 pt-10 text-white sm:px-5 sm:pb-4">
+                      <h3 className="font-heading text-xl font-bold sm:text-2xl">
                         {proc.title}
                       </h3>
                       <p className="mt-1 text-xs text-white/75">{proc.fullName}</p>
                     </div>
-                  </div>
+                  </Link>
                 ) : (
-                  <div
-                    className="px-6 py-5 text-white"
+                  <Link
+                    href={`/services/${proc.slug}`}
+                    className="block px-5 py-4 text-white sm:px-6 sm:py-5"
                     style={{
                       background:
                         "linear-gradient(135deg, #0F5A68 0%, #1A7A8A 55%, #22A8BF 100%)",
                     }}
+                    aria-label={`View ${proc.title} details`}
                   >
                     <Icon className="h-8 w-8 text-teal-100" />
-                    <h3 className="mt-3 font-heading text-2xl font-bold">
+                    <h3 className="mt-3 font-heading text-xl font-bold sm:text-2xl">
                       {proc.title}
                     </h3>
                     <p className="mt-1 text-xs text-white/75">{proc.fullName}</p>
-                  </div>
+                  </Link>
                 )}
-                <div className="flex flex-1 flex-col p-6">
+                <div className="flex flex-1 flex-col p-4 sm:p-6">
                   <p className="text-sm leading-relaxed text-muted">
                     {proc.details}
                   </p>
@@ -232,13 +238,13 @@ export default function LaserProceduresPage() {
                         className="flex items-start gap-2 text-sm text-foreground"
                       >
                         <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
-                        {b}
+                        <span className="min-w-0">{b}</span>
                       </li>
                     ))}
                   </ul>
                   <Link
                     href={`/services/${proc.slug}`}
-                    className="mt-5 inline-flex text-sm font-semibold text-teal-700 transition group-hover:text-teal-800"
+                    className="mt-5 inline-flex min-h-10 items-center text-sm font-semibold text-teal-700 transition group-hover:text-teal-800"
                   >
                     Learn more →
                   </Link>
@@ -250,26 +256,37 @@ export default function LaserProceduresPage() {
       </section>
 
       {/* Comparison */}
-      <section className="bg-teal-50/50 py-12 sm:py-16">
+      <section className="bg-teal-50/50 py-10 sm:py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-500">
               Compare Options
             </p>
-            <h2 className="mt-2 font-heading text-3xl font-bold text-teal-800">
+            <h2 className="mt-2 font-heading text-2xl font-bold text-teal-800 sm:text-3xl">
               LASIK vs SMILE vs TRANS PRK
             </h2>
             <div className="mt-3 h-1 w-14 rounded-full bg-teal-500" />
+            <p className="mt-3 text-xs text-muted sm:hidden">
+              Swipe sideways to compare all columns →
+            </p>
           </div>
 
-          <div className="mt-8 overflow-x-auto rounded-3xl border border-border bg-white shadow-card">
-            <table className="min-w-full text-left text-sm">
+          <div className="-mx-4 mt-6 overflow-x-auto px-4 sm:mx-0 sm:mt-8 sm:rounded-3xl sm:border sm:border-border sm:bg-white sm:px-0 sm:shadow-card">
+            <table className="min-w-[560px] w-full text-left text-sm sm:min-w-full">
               <thead>
                 <tr className="bg-gradient-to-r from-teal-800 via-teal-600 to-teal-500 text-white">
-                  <th className="px-5 py-4 font-semibold">Feature</th>
-                  <th className="px-5 py-4 font-semibold">LASIK</th>
-                  <th className="px-5 py-4 font-semibold">SMILE</th>
-                  <th className="px-5 py-4 font-semibold">TRANS PRK</th>
+                  <th className="whitespace-nowrap px-3 py-3.5 font-semibold sm:px-5 sm:py-4">
+                    Feature
+                  </th>
+                  <th className="whitespace-nowrap px-3 py-3.5 font-semibold sm:px-5 sm:py-4">
+                    LASIK
+                  </th>
+                  <th className="whitespace-nowrap px-3 py-3.5 font-semibold sm:px-5 sm:py-4">
+                    SMILE
+                  </th>
+                  <th className="whitespace-nowrap px-3 py-3.5 font-semibold sm:px-5 sm:py-4">
+                    TRANS PRK
+                  </th>
                 </tr>
               </thead>
               <tbody>
@@ -282,12 +299,18 @@ export default function LaserProceduresPage() {
                         : "border-t border-border bg-teal-50/40"
                     }
                   >
-                    <td className="px-5 py-4 font-semibold text-foreground">
+                    <td className="px-3 py-3.5 font-semibold text-foreground sm:px-5 sm:py-4">
                       {row.feature}
                     </td>
-                    <td className="px-5 py-4 text-muted">{row.lasik}</td>
-                    <td className="px-5 py-4 text-muted">{row.smile}</td>
-                    <td className="px-5 py-4 text-muted">{row.prk}</td>
+                    <td className="px-3 py-3.5 text-muted sm:px-5 sm:py-4">
+                      {row.lasik}
+                    </td>
+                    <td className="px-3 py-3.5 text-muted sm:px-5 sm:py-4">
+                      {row.smile}
+                    </td>
+                    <td className="px-3 py-3.5 text-muted sm:px-5 sm:py-4">
+                      {row.prk}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -340,17 +363,19 @@ export default function LaserProceduresPage() {
                     <Link
                       key={d.id}
                       href={`/doctors/${d.slug}`}
-                      className="flex items-center justify-between rounded-xl border border-border bg-teal-50/50 px-4 py-3 text-sm transition hover:border-teal-600"
+                      className="flex items-center justify-between gap-3 rounded-xl border border-border bg-teal-50/50 px-3 py-3 text-sm transition hover:border-teal-600 sm:px-4"
                     >
-                      <span>
-                        <span className="block font-semibold text-foreground">
+                      <span className="min-w-0">
+                        <span className="block truncate font-semibold text-foreground">
                           {d.name}
                         </span>
                         <span className="text-xs text-muted">
                           {d.specialisation}
                         </span>
                       </span>
-                      <span className="font-semibold text-teal-600">View →</span>
+                      <span className="shrink-0 font-semibold text-teal-600">
+                        View →
+                      </span>
                     </Link>
                   ))}
                 </div>
@@ -378,23 +403,23 @@ export default function LaserProceduresPage() {
         }}
       >
         <div className="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="font-heading text-3xl font-bold">
+          <h2 className="font-heading text-2xl font-bold sm:text-3xl">
             Am I eligible for LASIK?
           </h2>
-          <p className="mx-auto mt-3 max-w-2xl text-white/85">
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-white/85 sm:text-base">
             Book a detailed corneal evaluation at {HOSPITAL.name}, Hasthinapuram.
             We&apos;ll recommend the safest option for your eyes.
           </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-3">
+          <div className="mt-7 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <Link
               href="/appointments"
-              className="inline-flex rounded-xl bg-white px-6 py-3 text-sm font-semibold text-teal-700 hover:bg-teal-50"
+              className="inline-flex min-h-11 items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-teal-700 hover:bg-teal-50"
             >
               Book Appointment
             </Link>
             <a
               href={HOSPITAL.phoneHref}
-              className="inline-flex rounded-xl border-2 border-white px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
+              className="inline-flex min-h-11 items-center justify-center rounded-xl border-2 border-white px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
             >
               Call {HOSPITAL.phoneDisplay}
             </a>

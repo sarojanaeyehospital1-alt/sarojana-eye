@@ -14,9 +14,15 @@ import type { Service, ServiceCategory } from "@/lib/types";
 function ServiceListingCard({ service }: { service: Service }) {
   const [showBenefits, setShowBenefits] = useState(false);
 
+  const detailHref = `/services/${service.slug}`;
+
   return (
-    <article className="group relative flex min-h-[320px] flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-card transition-all duration-300 hover:border-teal-600 hover:shadow-card-hover">
-      <div className="relative aspect-[16/10] overflow-hidden bg-teal-50">
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-white shadow-card transition-all duration-300 hover:border-teal-600 hover:shadow-card-hover sm:min-h-[320px]">
+      <Link
+        href={detailHref}
+        className="relative block aspect-[16/10] overflow-hidden bg-teal-50"
+        aria-label={`View ${service.title} details`}
+      >
         <Image
           src={service.image}
           alt={service.imageAlt}
@@ -24,20 +30,22 @@ function ServiceListingCard({ service }: { service: Service }) {
           sizes="(max-width: 768px) 100vw, 33vw"
           className="object-cover transition duration-500 group-hover:scale-105"
         />
-        <span className="absolute right-3 top-3 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-teal-700 shadow-sm">
+        <span className="absolute right-2.5 top-2.5 z-10 max-w-[70%] truncate rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-teal-700 shadow-sm">
           {service.category}
         </span>
-      </div>
+      </Link>
 
-      <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-heading text-xl font-semibold text-teal-800">
-          {service.title}
-        </h3>
+      <div className="flex flex-1 flex-col p-4 sm:p-6">
+        <Link href={detailHref} className="block">
+          <h3 className="font-heading text-lg font-semibold text-teal-800 transition group-hover:text-teal-700 sm:text-xl">
+            {service.title}
+          </h3>
+        </Link>
         <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-muted">
           {service.shortDesc}
         </p>
 
-        <div className="my-4 h-px bg-border" />
+        <div className="my-3 h-px bg-border sm:my-4" />
 
         <div className="md:block">
           <button
@@ -55,15 +63,15 @@ function ServiceListingCard({ service }: { service: Service }) {
             {service.benefits.map((b) => (
               <li key={b} className="flex items-start gap-2">
                 <Check className="mt-0.5 h-4 w-4 shrink-0 text-teal-600" />
-                <span>{b}</span>
+                <span className="min-w-0">{b}</span>
               </li>
             ))}
           </ul>
         </div>
 
         <Link
-          href={`/services/${service.slug}`}
-          className="mt-5 inline-flex items-center gap-1 self-start rounded-xl px-3 py-2 text-sm font-semibold text-teal-600 transition hover:bg-teal-600 hover:text-white"
+          href={detailHref}
+          className="mt-4 inline-flex min-h-10 items-center gap-1 self-start rounded-xl px-3 py-2 text-sm font-semibold text-teal-600 transition hover:bg-teal-600 hover:text-white sm:mt-5"
         >
           Learn More
           <ArrowRight className="h-4 w-4" />

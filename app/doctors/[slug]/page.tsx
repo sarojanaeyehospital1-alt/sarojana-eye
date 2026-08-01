@@ -97,12 +97,12 @@ export default async function DoctorDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="grid gap-8 lg:grid-cols-[35%_1fr]">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-14">
+        <div className="grid gap-6 lg:grid-cols-[minmax(0,35%)_minmax(0,1fr)] lg:gap-8">
           {/* Sticky sidebar */}
-          <aside className="lg:sticky lg:top-28 lg:self-start">
+          <aside className="min-w-0 lg:sticky lg:top-28 lg:self-start">
             <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-card-hover">
-              <div className="relative aspect-[4/4.2] bg-gradient-to-br from-teal-800 to-teal-500">
+              <div className="relative aspect-[4/4.2] max-h-[360px] bg-gradient-to-br from-teal-800 to-teal-500 sm:max-h-none">
                 <Image
                   src={doctor.image}
                   alt={`${doctor.name} - Eye Surgeon at Sarojana Eye Hospital, Hasthinapuram, Hyderabad`}
@@ -112,9 +112,9 @@ export default async function DoctorDetailPage({ params }: Props) {
                   className="object-cover object-top"
                 />
               </div>
-              <div className="space-y-4 p-5">
+              <div className="space-y-4 p-4 sm:p-5">
                 <div>
-                  <h1 className="font-heading text-[26px] font-bold leading-tight text-teal-600">
+                  <h1 className="font-heading text-xl font-bold leading-tight text-teal-600 sm:text-[26px]">
                     {doctor.name}
                   </h1>
                   <span className="mt-2 inline-flex rounded-full bg-teal-600/10 px-3 py-1 text-xs font-semibold text-teal-700">
@@ -172,37 +172,43 @@ export default async function DoctorDetailPage({ params }: Props) {
           </aside>
 
           {/* Main column */}
-          <div className="space-y-10">
+          <div className="min-w-0 space-y-8 sm:space-y-10">
             <section>
-              <h2 className="font-heading text-[28px] font-bold text-teal-800">
+              <h2 className="font-heading text-xl font-bold text-teal-800 sm:text-[28px]">
                 About {doctor.name}
               </h2>
-              <p className="mt-4 leading-relaxed text-muted">{doctor.bio}</p>
-              <p className="mt-4 leading-relaxed text-muted">{doctor.bioExtra}</p>
-              <div className="mt-6 h-px bg-teal-200" />
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:mt-4 sm:text-base">
+                {doctor.bio}
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-muted sm:mt-4 sm:text-base">
+                {doctor.bioExtra}
+              </p>
+              <div className="mt-5 h-px bg-teal-200 sm:mt-6" />
             </section>
 
             <section>
-              <h2 className="font-heading text-[28px] font-bold text-teal-800">
+              <h2 className="font-heading text-xl font-bold text-teal-800 sm:text-[28px]">
                 Qualifications & Training
               </h2>
-              <div className="relative mt-6 border-l-2 border-teal-500 pl-6">
+              <div className="relative mt-5 border-l-2 border-teal-500 pl-4 sm:mt-6 sm:pl-6">
                 {doctor.qualificationDetails.map((q, index) => {
                   const Icon = getIcon(q.icon);
                   return (
                     <div
                       key={q.title}
-                      className={`relative mb-4 rounded-2xl border border-border p-4 last:mb-0 ${
+                      className={`relative mb-3 rounded-xl border border-border p-3.5 last:mb-0 sm:mb-4 sm:rounded-2xl sm:p-4 ${
                         index % 2 === 0 ? "bg-white" : "bg-teal-50/70"
                       }`}
                     >
-                      <span className="absolute -left-[1.9rem] top-5 h-3 w-3 rounded-full bg-teal-600 ring-4 ring-white" />
+                      <span className="absolute -left-[1.35rem] top-5 h-2.5 w-2.5 rounded-full bg-teal-600 ring-4 ring-white sm:-left-[1.9rem] sm:h-3 sm:w-3" />
                       <div className="flex gap-3">
-                        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-teal-600/10 text-teal-600">
-                          <Icon className="h-5 w-5" />
+                        <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-600/10 text-teal-600 sm:h-10 sm:w-10 sm:rounded-xl">
+                          <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
                         </span>
-                        <div>
-                          <p className="font-semibold text-foreground">{q.title}</p>
+                        <div className="min-w-0">
+                          <p className="text-sm font-semibold text-foreground sm:text-base">
+                            {q.title}
+                          </p>
                           <p className="mt-1 text-sm text-muted">{q.detail}</p>
                         </div>
                       </div>
@@ -213,21 +219,23 @@ export default async function DoctorDetailPage({ params }: Props) {
             </section>
 
             <section>
-              <h2 className="font-heading text-[28px] font-bold text-teal-800">
+              <h2 className="font-heading text-xl font-bold text-teal-800 sm:text-[28px]">
                 Professional Experience
               </h2>
-              <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              <div className="mt-4 grid gap-3 sm:mt-5 sm:grid-cols-2 sm:gap-4">
                 {doctor.affiliations.map((a) => (
                   <div
                     key={`${a.hospital}-${a.role}`}
-                    className="rounded-2xl border border-border bg-white p-5 shadow-card"
+                    className="rounded-xl border border-border bg-white p-4 shadow-card sm:rounded-2xl sm:p-5"
                   >
                     <div className="flex items-start gap-3">
-                      <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-teal-600 text-white">
-                        <Building2 className="h-5 w-5" />
+                      <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-teal-600 text-white sm:h-10 sm:w-10 sm:rounded-xl">
+                        <Building2 className="h-4 w-4 sm:h-5 sm:w-5" />
                       </span>
-                      <div>
-                        <p className="font-bold text-foreground">{a.hospital}</p>
+                      <div className="min-w-0">
+                        <p className="text-sm font-bold text-foreground sm:text-base">
+                          {a.hospital}
+                        </p>
                         <p className="mt-1 text-sm text-muted">{a.role}</p>
                         <span className="mt-2 inline-flex rounded-full bg-teal-600/10 px-2 py-0.5 text-[10px] font-bold uppercase text-teal-700">
                           {a.tag}
@@ -240,24 +248,24 @@ export default async function DoctorDetailPage({ params }: Props) {
             </section>
 
             <section>
-              <h2 className="font-heading text-[28px] font-bold text-teal-800">
+              <h2 className="font-heading text-xl font-bold text-teal-800 sm:text-[28px]">
                 Areas of Expertise
               </h2>
-              <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="mt-4 flex flex-wrap gap-2 sm:mt-5 sm:gap-3">
                 {doctor.expertise.map((item) => (
                   <div
                     key={item}
-                    className="flex items-center gap-2 rounded-full border border-teal-600/25 bg-teal-600/10 px-4 py-2.5 text-sm font-semibold text-teal-700"
+                    className="inline-flex max-w-full items-center gap-2 rounded-full border border-teal-600/25 bg-teal-600/10 px-3 py-2 text-xs font-semibold text-teal-700 sm:px-4 sm:py-2.5 sm:text-sm"
                   >
                     <CheckCircle2 className="h-4 w-4 shrink-0" />
-                    {item}
+                    <span className="min-w-0">{item}</span>
                   </div>
                 ))}
               </div>
             </section>
 
             <section>
-              <h2 className="font-heading text-[28px] font-bold text-teal-800">
+              <h2 className="font-heading text-xl font-bold text-teal-800 sm:text-[28px]">
                 Appointment Timings
               </h2>
               <ClinicTimingsBox className="mt-4 max-w-md" />
@@ -266,7 +274,7 @@ export default async function DoctorDetailPage({ params }: Props) {
               </p>
               <a
                 href={`tel:+91${doctor.phone}`}
-                className="mt-4 inline-flex items-center gap-2 rounded-xl bg-teal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-teal-800"
+                className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-xl bg-teal-600 px-5 py-3 text-sm font-semibold text-white hover:bg-teal-800"
               >
                 <Phone className="h-4 w-4" />
                 Call {doctor.phone.replace(/(\d{5})(\d{5})/, "$1 $2")}
@@ -276,6 +284,7 @@ export default async function DoctorDetailPage({ params }: Props) {
             <FaqAccordion
               faqs={doctor.faqs}
               title={`Questions about ${doctor.name}`}
+              embedded
             />
 
             {otherDoctors.length > 0 && (

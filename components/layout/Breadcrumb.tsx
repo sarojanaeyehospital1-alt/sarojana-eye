@@ -15,7 +15,7 @@ export function Breadcrumb({
       <BreadcrumbSchema items={items} />
       <nav
         aria-label="Breadcrumb"
-        className={`mb-6 text-sm ${light ? "text-white/70" : "text-muted"}`}
+      className={`mb-4 text-sm sm:mb-6 ${light ? "text-white/70" : "text-muted"}`}
       >
         <ol className="flex flex-wrap items-center gap-1.5">
           {items.map((item, index) => {
@@ -25,7 +25,7 @@ export function Breadcrumb({
                 {index > 0 && <span aria-hidden="true">›</span>}
                 {isLast ? (
                   <span
-                    className={`font-medium ${
+                    className={`max-w-[12rem] truncate font-medium sm:max-w-none sm:whitespace-normal ${
                       light ? "text-white" : "text-foreground"
                     }`}
                   >

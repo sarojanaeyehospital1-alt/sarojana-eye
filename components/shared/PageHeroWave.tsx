@@ -18,7 +18,7 @@ export function PageHeroWave({
   icon,
 }: PageHeroWaveProps) {
   return (
-    <section className="relative min-h-[280px] overflow-hidden text-white">
+    <section className="relative overflow-hidden text-white">
       <div
         className="absolute inset-0"
         style={{
@@ -27,19 +27,21 @@ export function PageHeroWave({
         }}
       />
       <div className="pointer-events-none absolute -right-16 top-8 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
-      <div className="relative mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+      <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-8 sm:px-6 sm:pb-16 sm:pt-12 lg:px-8 lg:pb-20 lg:pt-14">
         <Breadcrumb light items={crumbs} />
-        <div className="mt-2 flex flex-col items-center gap-6 text-center lg:flex-row lg:items-center lg:justify-between lg:text-left">
-          <div className="max-w-3xl">
+        <div className="mt-2 flex flex-col items-start gap-5 text-left sm:items-center sm:text-center lg:flex-row lg:items-center lg:justify-between lg:text-left">
+          <div className="w-full max-w-3xl min-w-0">
             {badge ? (
-              <span className="mb-3 inline-flex rounded-full border border-white/25 bg-white/15 px-3 py-1 text-xs font-semibold uppercase tracking-wider backdrop-blur">
+              <span className="mb-3 inline-flex max-w-full rounded-full border border-white/25 bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider backdrop-blur sm:text-xs">
                 {badge}
               </span>
             ) : null}
-            <h1 className="font-heading text-3xl font-bold leading-tight sm:text-4xl lg:text-[48px]">
+            <h1 className="break-words font-heading text-[1.65rem] font-bold leading-tight sm:text-4xl lg:text-[48px]">
               {title}
             </h1>
-            <p className="mt-4 text-base text-white/80 sm:text-lg">{subtitle}</p>
+            <p className="mt-3 text-sm leading-relaxed text-white/80 sm:mt-4 sm:text-base lg:text-lg">
+              {subtitle}
+            </p>
           </div>
           {icon ? (
             <div className="hidden shrink-0 rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur lg:block">
