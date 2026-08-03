@@ -3,7 +3,7 @@ import type { LaserProcedure, Service } from "@/lib/types";
 export const SERVICES: Service[] = [
   {
     id: "headache-clinic",
-    title: "Headache Clinic",
+    title: "Headache",
     slug: "headache-clinic",
     shortDesc:
       "Specialised evaluation of eye-related headaches and visual stress",

@@ -58,7 +58,7 @@ export function DoctorsPageHero() {
               </p>
 
               <h1 className="mt-3 font-heading text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-[2.7rem]">
-                Meet the specialists behind your care
+                Meet Our Experienced Eye Surgeons
               </h1>
 
               <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg lg:mx-0">
