@@ -30,7 +30,7 @@ const SLIDES = [
   {
     id: "surgeons",
     badge: "Aravind & L.V. Prasad Trained",
-    title: "Meet Our Fellowship-Trained Eye Surgeons",
+    title: "Meet Our Experienced Eye Surgeons",
     subtitle: "Phaco & LASIK Specialists You Can Trust",
     description:
       "Consult Dr. Chirra Karunakar Reddy (FICO UK) and Dr. Papagari Anitha Reddy for cataract, LASIK, and comprehensive eye care.",
