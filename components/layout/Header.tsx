@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { CalendarDays, MapPin, Menu, Phone } from "lucide-react";
+import { CalendarDays, MapPin, Menu } from "lucide-react";
 import { HOSPITAL, NAV_LINKS } from "@/lib/constants/hospital";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 
@@ -82,13 +82,6 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <a
-              href={HOSPITAL.phoneHref}
-              className="inline-flex items-center gap-2 rounded-lg border border-primary px-3 py-2 text-sm font-semibold text-primary transition hover:bg-background"
-            >
-              <Phone className="h-4 w-4" />
-              Call Now
-            </a>
             <Link
               href="/appointments"
               prefetch

@@ -17,7 +17,7 @@ const HERO_BADGES = [
 const PAGE_STATS = [
   { value: "2", label: "Specialists", icon: Stethoscope },
   { value: "20+", label: "Years experience", icon: Award },
-  { value: "25K+", label: "Happy patients", icon: Heart },
+  { value: "5 Lakh+", label: "Happy patients", icon: Heart },
   { value: "10K+", label: "Procedures done", icon: Eye },
 ];
 

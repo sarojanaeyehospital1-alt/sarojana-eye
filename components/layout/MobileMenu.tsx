@@ -9,7 +9,6 @@ import {
   CalendarDays,
   ChevronRight,
   Clock3,
-  Phone,
   X,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -162,25 +161,16 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
             <CalendarDays className="h-4 w-4" />
             Book Appointment
           </Link>
-          <div className="mt-2.5 grid grid-cols-2 gap-2.5">
-            <a
-              href={HOSPITAL.phoneHref}
-              className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-teal-600 bg-white py-3 text-sm font-semibold text-teal-600"
-            >
-              <Phone className="h-4 w-4" />
-              Call
-            </a>
-            <a
-              href={HOSPITAL.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={onClose}
-              className="inline-flex items-center justify-center gap-1.5 rounded-xl bg-whatsapp py-3 text-sm font-semibold text-white"
-            >
-              <FaWhatsapp className="h-4 w-4" />
-              WhatsApp
-            </a>
-          </div>
+          <a
+            href={HOSPITAL.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            className="mt-2.5 inline-flex w-full items-center justify-center gap-1.5 rounded-xl bg-whatsapp py-3 text-sm font-semibold text-white"
+          >
+            <FaWhatsapp className="h-4 w-4" />
+            WhatsApp
+          </a>
           <p className="mt-3 text-center text-[11px] text-muted">
             Hasthinapuram, Hyderabad · Sunday Closed
           </p>

@@ -7,6 +7,7 @@ import { WhyChooseUs } from "@/components/home/WhyChooseUs";
 import { AppointmentCTA } from "@/components/home/AppointmentCTA";
 import { LocationMap } from "@/components/home/LocationMap";
 import { InsuranceSection } from "@/components/home/InsuranceSection";
+import { OpticalsSection } from "@/components/home/OpticalsSection";
 import { FaqAccordion } from "@/components/shared/FaqAccordion";
 import { HOME_FAQS } from "@/lib/constants/hospital";
 import { createMetadata } from "@/lib/utils/metadata";
@@ -37,6 +38,7 @@ export default function HomePage() {
       <WhyChooseUs />
       <AppointmentCTA />
       <LocationMap />
+      <OpticalsSection />
       <InsuranceSection />
       <FaqAccordion faqs={HOME_FAQS} columns={2} />
     </>

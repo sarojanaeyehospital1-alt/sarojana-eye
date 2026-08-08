@@ -4,11 +4,11 @@ export const HOSPITAL = {
   name: "Sarojana Eye Hospital",
   tagline: "Restoring Vision, Changing Lives",
   subTagline: "20+ Years of Excellence in Advanced Eye Care",
-  phone: "9391043236",
-  phoneDisplay: "+91 93910 43236",
-  phoneHref: "tel:+919391043236",
-  whatsapp: "919391043236",
-  whatsappUrl: "https://wa.me/919391043236",
+  phone: "6281232055",
+  phoneDisplay: "+91 62812 32055",
+  phoneHref: "tel:+916281232055",
+  whatsapp: "916281232055",
+  whatsappUrl: "https://wa.me/916281232055",
   email: "sarojanaeyehospital1@gmail.com",
   address: {
     street: "Plot No. 6/W, Hasthinapuram Central",
@@ -28,7 +28,7 @@ export const HOSPITAL = {
     "https://www.google.com/maps?q=Sarojana+Eye+Hospital+Hasthinapuram+Hyderabad&output=embed",
   stats: [
     { value: "20+", label: "Years of Excellence", icon: "Award" },
-    { value: "25K+", label: "Happy Patients", icon: "Heart" },
+    { value: "5 Lakh+", label: "Happy Patients", icon: "Heart" },
     { value: "10K+", label: "Procedures Performed", icon: "Eye" },
     { value: "15K+", label: "Treatments Completed", icon: "Activity" },
   ],
@@ -62,6 +62,7 @@ export const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Doctors", href: "/doctors" },
   { label: "Services", href: "/services" },
+  { label: "Opticals", href: "/opticals" },
   { label: "Laser Procedures", href: "/laser-procedures" },
   { label: "Gallery", href: "/gallery" },
   { label: "Insurance", href: "/insurance" },
@@ -92,7 +93,7 @@ export const HOME_FAQS = [
   {
     question: "How do I book an appointment?",
     answer:
-      "You can book online via our appointments page, call +91 93910 43236, or WhatsApp us at +91 93910 43236. We will confirm your slot within 2 hours during working hours.",
+      "You can book online via our appointments page, call +91 62812 32055, or WhatsApp us at +91 62812 32055. We will confirm your slot within 2 hours during working hours.",
   },
   {
     question: "Is cashless insurance available?",

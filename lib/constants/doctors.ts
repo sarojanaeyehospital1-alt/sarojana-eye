@@ -63,7 +63,7 @@ export const DOCTORS: Doctor[] = [
         tag: "Current",
       },
     ],
-    phone: "9391043236",
+    phone: "6281232055",
     expertise: [
       "LASIK Surgery",
       "Phacoemulsification",
@@ -86,7 +86,7 @@ export const DOCTORS: Doctor[] = [
       {
         question: "How do I book an appointment with Dr. Chirra Karunakar Reddy?",
         answer:
-          "You can book online via our appointments page, call +91 93910 43236, or WhatsApp the same number. We confirm slots within 2 hours during working hours.",
+          "You can book online via our appointments page, call +91 62812 32055, or WhatsApp the same number. We confirm slots within 2 hours during working hours.",
       },
       {
         question: "What are the consultation timings?",
@@ -109,19 +109,19 @@ export const DOCTORS: Doctor[] = [
     name: "Dr. Papagari Anitha Reddy",
     title: "Consultant Ophthalmologist — Phaco & LASIK Surgeon",
     specialisation: "Phaco & LASIK Surgeon",
-    categoryLabel: "Paediatric & General Ophthalmology",
+    categoryLabel: "General Ophthalmology",
     meetLabel: "Meet your eye specialist",
     stats: [
       { value: "LV Prasad", label: "Trained" },
       { value: "Phaco", label: "& LASIK" },
-      { value: "Paediatric", label: "Care" },
+      { value: "20+ Years", label: "Experience" },
     ],
     qualifications: [
       "MBBS",
       "D.O. (Diploma in Ophthalmology)",
       "Former Associate – L.V. Prasad Eye Hospital",
     ],
-    shortBadges: ["MBBS", "D.O.", "LV Prasad"],
+    shortBadges: ["MBBS", "D.O."],
     qualificationDetails: [
       {
         title: "MBBS",
@@ -154,30 +154,29 @@ export const DOCTORS: Doctor[] = [
         tag: "Current",
       },
     ],
-    phone: "9848416815",
+    phone: "6281232055",
     expertise: [
       "LASIK Surgery",
       "Phacoemulsification",
-      "Paediatric Eye Care",
       "General Ophthalmology",
       "Cataract Surgery",
       "Contact Lens",
     ],
     image: "/images/anithareddy.webp",
-    bio: "Dr. Papagari Anitha Reddy brings exceptional training from L.V. Prasad Eye Hospital, one of the world's most respected eye care institutions. Her expertise in phacoemulsification and LASIK surgery, combined with her compassionate approach, makes her a trusted eye care specialist for patients of all ages in Hasthinapuram, Hyderabad.",
+    bio: "Dr. Papagari Anitha Reddy brings exceptional training from L.V. Prasad Eye Hospital, one of the world's most respected eye care institutions. Her expertise in phacoemulsification and LASIK surgery, combined with her compassionate approach, makes her a trusted eye care specialist for patients in Hasthinapuram, Hyderabad.",
     bioExtra:
-      "Families appreciate her calm, clear explanations and child-friendly approach to paediatric eye concerns, alongside skilled surgical care for cataract and refractive needs.",
+      "Patients appreciate her calm, clear explanations and skilled surgical care for cataract and refractive needs.",
     previousHospital: "L.V. Prasad Eye Hospital",
     faqs: [
       {
         question: "What does Dr. Papagari Anitha Reddy specialise in?",
         answer:
-          "Dr. Anitha specialises in Phaco & LASIK surgery, paediatric eye care, and general ophthalmology at Sarojana Eye Hospital, Hasthinapuram, Hyderabad.",
+          "Dr. Anitha specialises in Phaco & LASIK surgery and general ophthalmology at Sarojana Eye Hospital, Hasthinapuram, Hyderabad.",
       },
       {
         question: "How do I book an appointment with Dr. Papagari Anitha Reddy?",
         answer:
-          "Book online, call +91 98484 16815, or use WhatsApp. Our team will confirm your preferred morning or evening slot.",
+          "Book online, call +91 62812 32055, or use WhatsApp. Our team will confirm your preferred morning or evening slot.",
       },
       {
         question: "What are the consultation timings?",
